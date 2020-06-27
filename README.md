@@ -1,4 +1,4 @@
-![banner](static/images/logoimg.png)
+![banner](static/images/logotext.png)
 
 # Intersection
 
