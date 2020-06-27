@@ -77,7 +77,12 @@ Create new pages/links here!
 def index():
 	current_user = flask_login.current_user
 	# If the user isn't logged in the id isn't defined
-	try: current_user.id
+	try:
+		test = current_user.id
+		return render_template('profile.html',
+			page_name="profile",
+			current_user=test,
+			profile_user=test)
 	except: current_user = None
 	return render_template('index.html', page_name="index", current_user=current_user)
 

@@ -18,10 +18,15 @@
   {% if current_user %}
     <div class="sidenav">
         <ul>
-        <li> <a href="/chat"> Chat <img src="/static/images/logo.png"> </a></li>
-        <li> <a href="/discover">Discover</a></li>
-        <li> <a href="/profile">Profile</a></li>
-        <li> <a href="/logout">Logout</a></li>
+          <li><img src="/static/images/logoimg.png" style="height: 70px"></img></li><br>
+        <li class = "forumpic"> <a href="/chat"><img src="/static/images/newsfeed.png" style="height: 70px"></img></a></li>
+        <li class = "discoverpic"> <a href="/discover"> <img src="/static/images/discover.png" style="height: 70px"></img></a></li>
+        <li class = "friendpic"> <a href="/"> <img src="/static/images/friends.png" style="height: 70px"></img> </a></li>
+        <li class = "chatpic"> <a href="/chat"> <img src="/static/images/chat.png" style="height: 70px"></img></a></li>
+        <li class = "profilepic"> <a href="/profile"> <img src="/static/images/profile.png" style="height: 70px"></img></a></li>
+        <br><br><br><br><br>
+        
+        <li class="logout"> <a href="/logout">Log out</a></li>
         </ul>
     </div>
   {% endif %}
