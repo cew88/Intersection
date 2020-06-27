@@ -226,7 +226,9 @@ ul {
   display: grid;
   grid-template-columns: auto auto;
   padding: 30px;
-  grid-gap: 50px;
+  grid-gap: 100px;
+  margin-left:2%;
+  margin-right:2%;
 }
 
 .team-grid {

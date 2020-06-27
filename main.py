@@ -80,6 +80,7 @@ def index():
 	try:
 		test = current_user.id
 		user = db.get_user_by("name", test)
+		print(user["stories"])
 		return render_template('profile.html',
 			page_name="profile",
 			current_user=test,
@@ -172,8 +173,19 @@ def change_bio():
 def new_story():
     name = flask_login.current_user.id
     data = request.json
-    print(data)
-    #db.new_story(name, data["bio"])
+    title = data["title"]
+    del data["title"]
+    data["comments"] = []
+    db.new_story(name, title, data)
+    return jsonify({})
+
+@app.route('/deletestory', methods=["POST"])
+@flask_login.login_required
+def delete_story():
+    name = flask_login.current_user.id
+    data = request.json
+    title = data["title"]
+    db.delete_story(name, title)
     return jsonify({})
 
 """

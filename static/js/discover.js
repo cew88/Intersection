@@ -1,0 +1,16 @@
+var list_of_responses = ["I'm so sorry.", 
+  "I'm here for you.",
+  "This must be so hard for you.",
+  "I can't begin to imagine what you're going through.",
+  "Is there anything I can do to help?",
+  "Do you want to talk about it?",
+  "What do you need right now?",
+  "I'm happy to listen any time.",
+  "I don't know what to say.",
+  "I wish there was something I could do.",
+  "It makes me really sad to hear this happen.",
+  "Thank you for sharing.",
+  "This must be hard to talk about. Thanks for opening up to me.",
+  "I'm in your corner.",
+  "I'm proud of you."];
+

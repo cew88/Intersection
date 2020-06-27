@@ -24,8 +24,7 @@ document.getElementById("submit-story").onclick = function(){
   post_card.setAttribute("class", "card");
 
   var post_content = document.createElement("div");
-  post_content.setAttribute("class", "container");
-  post_content.style.textOverflow ="ellipsis";
+  post_content.setAttribute("class", "container");  
 
   var tags = document.createElement('div');
 
@@ -62,7 +61,7 @@ document.getElementById("submit-story").onclick = function(){
   $.ajax({
         url: '/newstory',
         type: "POST",
-        data: JSON.stringify({ title: title_text, content: content_text, tags:story_tags}),
+        data: JSON.stringify({ title: document.getElementById("story-title").value, content: document.getElementById("story").value, tags:story_tags}),
         contentType: "application/json; charset=UTF-8",
         success: function(response) {
             console.log( response );
@@ -71,6 +70,10 @@ document.getElementById("submit-story").onclick = function(){
             console.log(error);
         }
     });
+
+  document.getElementById("story-title").value = '';
+  document.getElementById("story").value = '';
+  //NEED TO FIGURE OUT HOW TO RESET STORY TAGS
 }
 
 
@@ -189,3 +192,19 @@ document.getElementById("change-bio").onclick = function(){
         }
     });
 }
+
+$(".deletepost").click(e => {
+    title = $(e.currentTarget).data("val");
+    $.ajax({
+        url: '/deletestory',
+        type: "POST",
+        data: JSON.stringify({ title: title }),
+        contentType: "application/json; charset=UTF-8",
+        success: function(response) {
+            $(e.currentTarget).parent().parent().remove();
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+});

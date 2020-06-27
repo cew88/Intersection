@@ -112,6 +112,8 @@ p {
 
 .container {
   padding: 5px 5px;
+  height: 400px;
+  overflow: auto;
 }
 
 .post-grid {

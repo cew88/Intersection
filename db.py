@@ -48,6 +48,16 @@ def change_bio(name, bio):
     if user:
         users.update_one({'name': name}, {"$set": {"bio": bio}})
 
+def new_story(name, title, story):
+    user = get_user_by("name", name)
+    if user:
+        users.update_one({'name': name}, {"$set": {"stories."+title: story}})
+
+def delete_story(name, title):
+    user = get_user_by("name", name)
+    if user:
+        users.update_one({'name': name}, {"$unset": {"stories."+title: ""}})
+
 ### DANGER ###
 def delete_all_users():
 	return users.delete_many({})
