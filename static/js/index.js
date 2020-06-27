@@ -17,10 +17,14 @@ $(".comment").click(e => {
 	  author = $(e.currentTarget).data("author")
     console.log(title);
     com = $("#comtext-"+title).val();
+    
     // Empty textbox
     $("#comtext-"+title).val("");
     console.log(com);
-    $.ajax({
+    
+    //Do not post comment if comment box is empty
+    if (com != ""){
+      $.ajax({
         url: '/comment',
         type: "POST",
         data: JSON.stringify({ author: author, title: title, comment: com }),
@@ -32,4 +36,5 @@ $(".comment").click(e => {
             console.log(error);
         }
     });
+  }
 });

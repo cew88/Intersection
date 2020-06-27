@@ -209,3 +209,20 @@ $(".deletepost").click(e => {
         }
     });
 });
+
+console.log(document.getElementById("box2"));
+
+document.getElementById("add-new-tag").onclick = function(){
+  console.log(document.getElementById("other-tag").value);
+  //<p ondragstart="dragStart(event)" draggable="true" id="t- sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
+  new_tag = document.createElement('p');
+  new_tag.setAttribute("ondragstart", "dragStart(event)");
+  new_tag.setAttribute("draggable", "true");
+  new_tag.setAttribute("id", document.getElementById("other-tag").value);
+  new_tag.setAttribute("class", "tags");
+  new_tag.appendChild(document.createTextNode(document.getElementById("other-tag").value)
+  );
+
+  document.getElementById("box2").appendChild(new_tag);
+  document.getElementById("box2").appendChild(document.createTextNode(" "));
+}

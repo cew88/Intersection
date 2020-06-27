@@ -11,14 +11,14 @@ var list_of_responses = ["I'm so sorry.",
   "Do you want to talk about it?",
   "What do you need right now?",
   "I'm happy to listen any time.",
-  "I don't know what to say.",
   "I wish there was something I could do.",
-  "It makes me really sad to hear this happen.",
+  "It makes me really sad to hear this happened.",
   "Thank you for sharing.",
   "This must be hard to talk about.",
   "Thank you for opening up.",
   "I'm in your corner.",
-  "I'm proud of you."];
+  "I'm proud of you.",
+  "You're so brave."];
 
 window.addEventListener('load', function(){ 
   var suggestedComments = document.getElementsByClassName("suggested-comments-div");
@@ -37,7 +37,6 @@ window.addEventListener('load', function(){
 
     for (com_index = 0; com_index < random_responses.length; com_index++){
       comment_text = document.createTextNode(random_responses[com_index]);
-      
       comment_div = document.createElement('div');
       comment_div.setAttribute('class', 'suggested-comment');
       comment_div.appendChild(comment_text);

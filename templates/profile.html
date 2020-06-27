@@ -19,7 +19,7 @@
         
          <form>
           <label for="story-title"> <p>Title your story </p></label><br>
-          <input class="form-control" type="text" id="story-title"></input>
+          <input class="form-control" type="text" id="story-title" maxlength="100"></input>
           <label for="story"> <p>Compose your story </p></label><br>
           <textarea class="form-control" id="story" rows="3"></textarea>
           <br>
@@ -37,10 +37,25 @@
             <p ondragstart="dragStart(event)" draggable="true" id="down-syndrome" class="tags"> down-syndrome </p>
             <p ondragstart="dragStart(event)" draggable="true" id="vitiligo" class="tags"> vitiligo </p>
             <p ondragstart="dragStart(event)" draggable="true" id="cancer" class="tags"> cancer </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="cystic-fibrosis" class="tags"> cystic-fibrosis </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="biracial" class="tags"> biracial </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="multiple-sclerosis" class="tags"> multiple-sclerosis </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="pcos" class="tags"> pcos </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="tourette-syndrome" class="tags"> tourette-syndrome </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="anxiety" class="tags"> anxiety </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="depression" class="tags"> depression </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="transgender" class="tags"> transgender </p>
+
           </div>
     
          </form>
+         <br><br>
+         <label for="other-tag"> <p> Add another tag </p></label><br>
+         <input class="form-control" type="text" id="other-tag" maxlength="100"></input>
+         <br>
+         <button class="btn btn-primary" id="add-new-tag"> Add a tag </button>
          <button class="btn btn-primary" id="submit-story"> Submit </button>
+         <br>
       </div>
     </div>
 
@@ -62,8 +77,17 @@
           <p ondragstart="dragStart(event)" draggable="true" id="t- down-syndrome" class="tags"> down-syndrome </p>
           <p ondragstart="dragStart(event)" draggable="true" id="t- vitiligo" class="tags"> vitiligo </p>
           <p ondragstart="dragStart(event)" draggable="true" id="t- cancer" class="tags"> cancer </p>
+          <p ondragstart="dragStart(event)" draggable="true" id="t- cystic-fibrosis" class="tags"> cystic-fibrosis </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- biracial" class="tags"> biracial </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- multiple-sclerosis" class="tags"> multiple-sclerosis </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- pcos" class="tags"> pcos </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- tourette-syndrome" class="tags"> tourette-syndrome </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- anxiety" class="tags"> anxiety </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- depression" class="tags"> depression </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- transgender" class="tags"> transgender </p>
         </div>
-
+        
+        <button class="btn btn-primary" id="add-new-tag"> Add a tag </button>
         <button class="btn btn-primary" id="submit-tags"> Submit </button>
       </div>      
     </div>

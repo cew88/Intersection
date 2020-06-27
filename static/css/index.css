@@ -2,6 +2,24 @@
   --input-padding-x: .75rem;
   --input-padding-y: .75rem;
 }
+/*TESTING123*/
+.intro{
+  float: left;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.introtext{
+  float: left;
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.introimg{
+  float: left;
+  margin-left: 5%;
+  width: 45%;
+}
 
 
 /*NAVBAR*/
@@ -88,7 +106,7 @@ h1 {
 }
 
 h5 {
-  font-weight:800 !important;
+  font-weight: 800;
 }
 
 .hide {
@@ -334,14 +352,35 @@ html {
     float: left;
   }
 
+  .intro{
+    float: left;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+
+  .introtext{
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .introimg{
+    float: left;
+    width: 100%;
+  }
   .jumbotron-grid1 {
     width: 100%;
     display: grid;
     grid-template-columns: auto;
     padding: 30px;
     grid-gap: 100px;
-    margin-left:5%;
+    margin-left:1%;
     margin-bottom: 3%;
+  }
+
+  item2{
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 
   .jumbotron-grid1 h1{
@@ -419,10 +458,11 @@ html {
 
 .suggested-comment {
   width: 100%;
-  border: 5px solid lightblue;
+  border: 3px solid lightblue;
   border-radius: 20px;
   padding: 5px;
   font-size: 15px;
+  text-align:center;
 }
 
 .suggested-comments-div {

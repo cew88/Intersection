@@ -7,7 +7,7 @@
 #bubbles {
     padding: 100px 0;
     width: 100% !important;
-    height: 360px !important;
+    height: 300px !important;
 }
 .bubble {
     border-radius: 200px;
@@ -17,8 +17,8 @@
 }
 
 .x1 {
-    width: 330px;
-    height: 330px;
+    width: 100px;
+    height: 100px;
     background: rgba(178, 219, 173, 0.85);
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
@@ -30,8 +30,8 @@
 }
 
 .x2 {
-    width: 320px;
-    height: 320px;
+    width: 120px;
+    height: 120px;
     background: rgba(181, 226, 248, 0.85);
     left: 10%;
     -webkit-transform: scale(0.6);
@@ -43,8 +43,8 @@
     -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
 }
 .x3 {
-    width: 320px;
-    height: 320px;
+    width: 110px;
+    height:110px;
     background: rgba(172, 184, 251, 0.85);
     left: 20%;
     -webkit-transform: scale(0.8);
@@ -56,8 +56,8 @@
     -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
 }
 .x4 {
-    width: 340px;
-    height: 340px;
+    width: 140px;
+    height: 140px;
     background: rgba(246, 173, 195, 0.85);
     left: 35%;
     -webkit-transform: scale(0.75);
@@ -69,8 +69,8 @@
     -o-animation: moveclouds 18s linear infinite, sideWays 7s ease-in-out infinite alternate;
 }
 .x5 {
-    width: 320px;
-    height: 320px;
+    width: 120px;
+    height: 120px;
     background: rgba(250, 218, 164, 0.85);
     left: 40%;
     -webkit-transform: scale(0.8);
@@ -83,8 +83,8 @@
 }
 
 .x6 {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     background: rgba(178, 219, 173, 0.85);
     left: 53%;
     -webkit-transform: scale(0.9);
@@ -97,8 +97,8 @@
 }
 
 .x7 {
-    width: 320px;
-    height: 320px;
+    width: 120px;
+    height: 120px;
     background: rgba(250, 218, 164, 0.85);
     left: 67%;
     -webkit-transform: scale(0.6);
@@ -110,8 +110,8 @@
     -o-animation: moveclouds 22s linear infinite, sideWays 5s ease-in-out infinite alternate;
 }
 .x8 {
-    width: 310px;
-    height: 310px;
+    width: 110px;
+    height: 110px;
     background: rgba(181, 226, 248, 0.85);
     left: 78%;
     -webkit-transform: scale(0.8);
@@ -123,8 +123,8 @@
     -o-animation: moveclouds 18s linear infinite, sideWays 4s ease-in-out infinite alternate;
 }
 .x9 {
-    width: 330px;
-    height: 330px;
+    width: 130px;
+    height: 130px;
     background: rgba(246, 173, 195, 0.85);
     left: 85%;
     -webkit-transform: scale(0.75);
@@ -136,8 +136,8 @@
     -o-animation: moveclouds 15s linear infinite, sideWays 6s ease-in-out infinite alternate;
 }
 .x10 {
-    width: 320px;
-    height: 320px;
+    width: 120px;
+    height: 120px;
     background: rgba(172, 184, 251, 0.85);
     left: 93%;
     -webkit-transform: scale(0.8);
