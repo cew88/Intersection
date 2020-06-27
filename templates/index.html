@@ -9,8 +9,10 @@
 -->
 <nav class="navbar navbar-expand-md navbar-light navbar-fixed-top">
     <a class="navbar-brand" href="/">
-        <!--Logo goes here-->
+        <a href="#about"> <img src= "/static/images/logoimg.png" alt="logo" style="height: 55px"> </a>
+        <h2>intersection</h2>
     </a>
+    <!-- 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,7 +26,7 @@
             </li>
         </ul>
         <ul class="nav navbar-nav">
-            <!-- If the user is logged in -->
+            <!-- If the user is logged in 
             {% if current_user %}
             <li class="nav-item">
                 <a id="dashboard-link" class="nav-link" href="/logout">Logout</a>
@@ -32,6 +34,7 @@
             {% endif %}
         </ul>
     </div>
+    -->
 </nav>
 
 <br><br><br>
@@ -71,7 +74,7 @@
         <div>
           <img src="/static/images/4.png" style="width: 95%"></img>
         </div>
-        <div>
+        <div class="item5">
           <img src="/static/images/5.png" style="width: 95%"></img>
         </div>
       </div>
@@ -79,191 +82,105 @@
     </div>
     
     <div class="jumbotron-grid">
-          <div style="max-width:800px"> 
-            <h3> How it works </h3>
-            <li> When you join Intersection, you will create a profile where you can add tags that correspond to your identities or experiences that you are interested in connecting with people through. For example, you might add the tags woman, biracial, queer, and domestic abuse survivor. </li>
-            <li> Then, you would have access to forums where people of those experiences can share their stories with one another. Intersection will also give you friend suggestions based on how many identities and experiences you have in common.</li>
-            <li> Once you've added friends, you'll be able to chat one-on-one with your new connections and further discuss your stories.</li>
-          </div>
-
-          <div> 
-            <h3> Why you should use Intersection </h3>
-            <p> Talking about your experiences with people who understand and relate to them can be therapeutic and beneficial to your mental health. Finding others with common identities can alleviate one's sense of isolation and encourage a feeling of belonging.</p>
-          </div>
-
-          <div> 
-            <h3> Steps </h3>
-            <p> add stuff here </p>
-          </div>
-
-          <div> 
-            <h3> Future Plans </h3>
-            <p> add stuff here </p>
-          </div>
-        </div>
-        
-        <br><br>
-        <center>
-          <h1> Meet the Team </h1>
-          <div class="team-grid">
-            <div class="row">
-              <div class="column">
-                <div class="card">
-                  <img src="/static/images/Michelle.png" alt="Jane" style="width:100%">
-                  <div class="container">
-                    <br>
-                    <h2>Michelle Bryson</h2>
-                    <p class="title">Designer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <br>
-                  </div>
-                </div>
-              </div>
-
-              <div class="column">
-                <div class="card">
-                  <img src="/static/images/Bach.png" alt="Mike" style="width:100%">
-                  <div class="container">
-                    <br>
-                    <h2>Bach Nguyen</h2>
-                    <p class="title">Designer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <br>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="column">
-                <div class="card">
-                  <img src="/static/images/Jendy.png" alt="John" style="width:100%">
-                  <div class="container">
-                    <br>
-                    <h2>Jendy Ren</h2>
-                    <p class="title">Designer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <br>
-                  </div>
-                </div>
-              </div>
-
-              <div class="column">
-                <div class="card">
-                  <img src="/static/images/Christina.png" alt="John" style="width:100%">
-                  <div class="container">
-                    <br>
-                    <h2>Christina Wong</h2>
-                    <p class="title">Designer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <br>
-                  </div>
-                </div>
-              </div>
-
-              <div class="column">
-                <div class="card">
-                  <img src="/static/images/John.png" alt="John" style="width:100%">
-                  <div class="container">
-                    <br>
-                    <h2>John Paul Bunn</h2>
-                    <p class="title">Designer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <br>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 
-            <div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front" id="michelle">
-                    <img src="/static/images/Michelle.jpg" alt="Avatar" style="width:230px;height:230px;">
-                    <br><br>
-                    <h2>Michelle</h2> 
-                  </div>
-                  <div class="flip-card-back">
-                    <br><br>
-                    <a href="#about"><i class="fa fa-linkedin-square" style="font-size:48px;color:blue"></i></a>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="/static/images/Bach.jpg" alt="Avatar" style="width:230px;height:230px;">
-                    <br><br>
-                    <h2>Bach</h2> 
-                  </div>
-                  <div class="flip-card-back">
-                    
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="/static/images/Bach.jpg" alt="Avatar" style="width:230px;height:230px;">
-                    <br><br>
-                    <h2>Jendy</h2> 
-                  </div>
-                  <div class="flip-card-back">
-                    
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="/static/images/Michelle.jpg" alt="Avatar" style="width:230px;height:230px;">
-                    <br><br>
-                    <h2>Christina</h2> 
-                  </div>
-                  <div class="flip-card-back">
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src="/static/images/Michelle.jpg" alt="Avatar" style="width:230px;height:230px;">
-                    <br><br>
-                    <h2>John</h2> 
-                  </div>
-                  <div class="flip-card-back">
-                    
-                    <p>Architect & Engineer</p> 
-                    <p>We love that guy</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          -->
-        </center>
-        <br><br><br>
-        <br><br><br>           
-
-        </div>
+      <div>
+        <h2> How it works </h2>
+        <li> When you join Intersection, you will create a profile where you can add tags that correspond to your identities or experiences that you are interested in connecting with people through. For example, you might add the tags woman, biracial, queer, and domestic abuse survivor. </li>
+        <li> Then, you would have access to forums where people of those experiences can share their stories with one another. Intersection will also give you friend suggestions based on how many identities and experiences you have in common.</li>
+        <li> Once you've added friends, you'll be able to chat one-on-one with your new connections and further discuss your stories.</li>
       </div>
+      <div> 
+        <h2> Why you should use Intersection </h2>
+        <p> Talking about your experiences with people who understand and relate to them can be therapeutic and beneficial to your mental health. Finding others with common identities can alleviate one's sense of isolation and encourage a feeling of belonging.</p>
+      </div>
+
+      <div> 
+        <h2> Steps </h2>
+        <p> add stuff here </p>
+      </div>
+
+      <div> 
+        <h2> Future Plans </h2>
+        <p> add stuff here </p>
+      </div>
+    </div>
+
+    <div class="jumbotron-team">
+      <br><br>
+      <center>
+        <h1> Meet the Team </h1>
+        <div class="team-grid">
+          <div class="row">
+            <div class="column">
+              <div class="card">
+                <img src="/static/images/Michelle.png" alt="Jane" style="width:100%">
+                <div class="container">
+                  <br>
+                  <h3>Michelle Bryson</h3>
+                  <p class="title">Designer</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <img src="/static/images/Bach.png" alt="Mike" style="width:100%">
+                <div class="container">
+                  <br>
+                  <h3>Bach Nguyen</h3>
+                  <p class="title">Designer</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+              
+            <div class="column">
+              <div class="card">
+                <img src="/static/images/Jendy.png" alt="John" style="width:100%">
+                <div class="container">
+                  <br>
+                  <h3>Jendy Ren</h3>
+                  <p class="title">Designer</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <img src="/static/images/Christina.png" alt="John" style="width:100%">
+                <div class="container">
+                  <br>
+                  <h3>Christina Wong</h3>
+                  <p class="title">Designer</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <img src="/static/images/John.png" alt="John" style="width:100%">
+                <div class="container">
+                  <br>
+                  <h3>John Paul Bunn</h3>
+                  <p class="title">Designer</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </center>
+      <br><br><br><br><br>
+      <br><br><br><br><br>           
+    </div>
+
 </main>
 
 

@@ -21,6 +21,10 @@ def user_template():
 
 def get_user_by(field, value):
 	# Get user by field (username, password, id, etc)
+	return users.find_one({field: value}, {"_id":0, "pwrd": 0})
+
+def get_user_by_full(field, value):
+	# Get user by field (username, password, id, etc)
 	return users.find_one({field: value}, {"_id":0})
 
 def create_user(name, pwrd):
@@ -34,29 +38,35 @@ def create_user(name, pwrd):
 		return base
 
 def verify_user(name, pwrd):
-	user = get_user_by("name", name)
+	user = get_user_by_full("name", name)
 	if user:
 		# Make sure the user exists.
-		return bcrypt.checkpw(pwrd.encode("UTF-8"), get_user_by("name", name)["pwrd"])
+		return bcrypt.checkpw(pwrd.encode("UTF-8"), get_user_by_full("name", name)["pwrd"])
 	return False
 
 def delete_user(name):
 	return users.delete_one({"name": name})
 
 def change_bio(name, bio):
-    user = get_user_by("name", name)
-    if user:
-        users.update_one({'name': name}, {"$set": {"bio": bio}})
+	user = get_user_by("name", name)
+	if user:
+		users.update_one({'name': name}, {"$set": {"bio": bio}})
 
 def new_story(name, title, story):
-    user = get_user_by("name", name)
-    if user:
-        users.update_one({'name': name}, {"$set": {"stories."+title: story}})
+	user = get_user_by("name", name)
+	if user:
+		users.update_one({'name': name}, {"$set": {"stories."+title: story}})
+
+def comment(author, name, title, comment):
+	author_obj = get_user_by("name", author)
+	if author_obj:
+		#print({"stories."+title+".comments": [name, comment]})
+		users.update_one({'name': author}, {"$push": {"stories."+title+".comments": [name, comment]}})
 
 def delete_story(name, title):
-    user = get_user_by("name", name)
-    if user:
-        users.update_one({'name': name}, {"$unset": {"stories."+title: ""}})
+	user = get_user_by("name", name)
+	if user:
+		users.update_one({'name': name}, {"$unset": {"stories."+title: ""}})
 
 ### DANGER ###
 def delete_all_users():

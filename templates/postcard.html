@@ -1,0 +1,49 @@
+
+<div class="modal fade" id="modal-{{title|replace(" ", "_")}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{title|replace("_", " ")}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-8">
+                    {{story.content}}
+                </div>
+                <div class="col" id="combox-{{title|replace(" ", "_")}}">
+                    <h4><b>Comments</b></h4>
+                    <div id="suggested-comments"></div>
+                    <input id="comtext-{{title|replace(" ", "_")}}" type="text" placeholder="Make a comment!" class="form-control"></input> <button data-author="{{story.author}}" data-val="{{title|replace(" ", "_")}}" class="comment btn btn-primary">Comment</button>
+                    <hr>
+                    {% for poster, com in story.comments %}
+                        <div><b> {{poster}} </b> {{com}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="container">
+        <span data-toggle="modal" data-target="#modal-{{title|replace(" ", "_")}}">
+            <i class="fa fa-window-maximize" aria-hidden="true"></i>
+        </span>
+		{% if current_user == profile_user %}
+        	<span data-val="{{title|replace(" ", "_")}}" class="close deletepost"> &times; </span>
+		{% endif %}
+        <h2 style="font-weight: 700;">{{title|replace("_", " ")}}</h2>
+        <div>
+            {% for tag in story.tags %}
+                <span class="badge badge-info">{{tag}}</span>
+            {% endfor %}
+        </div>
+        <p style="">{{story.content}}</p>
+    </div>
+</div>

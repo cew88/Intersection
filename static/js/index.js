@@ -11,3 +11,25 @@ $( document ).ready(function() {
         }
     }
 })
+
+$(".comment").click(e => {
+    title = $(e.currentTarget).data("val")
+	author = $(e.currentTarget).data("author")
+    console.log(title);
+    com = $("#comtext-"+title).val();
+    // Empty textbox
+    $("#comtext-"+title).val("");
+    console.log(com);
+    $.ajax({
+        url: '/comment',
+        type: "POST",
+        data: JSON.stringify({ author: author, title: title, comment: com }),
+        contentType: "application/json; charset=UTF-8",
+        success: function(response) {
+            $("#combox-"+title).append(`<div><b> ${response.user} </b> ${response.comment}</div>`)
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+});

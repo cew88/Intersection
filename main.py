@@ -85,7 +85,7 @@ def index():
 			page_name="profile",
 			current_user=test,
 			profile_user=test,
-            user_data = user)
+			user_data = user)
 	except: current_user = None
 	return render_template('index.html', page_name="index", current_user=current_user)
 
@@ -100,9 +100,20 @@ def profile(username):
 			page_name="profile",
 			current_user=current_user,
 			profile_user=username,
-            user_data = profile_user_data)
+			user_data = profile_user_data)
 	else:
 		return render_template('404.html', message="User {} doesn't exist!".format(username))
+
+@app.route('/discover')
+@flask_login.login_required
+def discover():
+	posts = {}
+	current_user = flask_login.current_user.id
+	user_data = db.get_user_by("name", current_user)
+
+	[posts.update(x["stories"]) for x in list(db.users.find({}, {'stories':1, '_id':0})) if "stories" in x]
+	featured = list(sorted(posts.items(), key=lambda k: len(k[1]["comments"])))[::-1]
+	return render_template('discover.html', featured=featured, user_data=user_data)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -147,46 +158,58 @@ def login():
 @app.route('/logout')
 @flask_login.login_required
 def logout():
-    flask_login.logout_user()
-    return redirect('/')
+	flask_login.logout_user()
+	return redirect('/')
 
 @app.route('/chat')
 @flask_login.login_required
 def chat():
-    name = flask_login.current_user.id
-    # Find a place to set the room name
-    session['room'] = "GeneralChat"
-    room = session.get('room', '')
-    return render_template('chat.html', name=name, room=room)
+	name = flask_login.current_user.id
+	# Find a place to set the room name
+	session['room'] = "GeneralChat"
+	room = session.get('room', '')
+	return render_template('chat.html', name=name, room=room)
 
 @app.route('/changebio', methods=["POST"])
 @flask_login.login_required
 def change_bio():
-    name = flask_login.current_user.id
-    data = request.json
-    print(data)
-    db.change_bio(name, data["bio"])
-    return jsonify({})
+	name = flask_login.current_user.id
+	data = request.json
+	print(data)
+	db.change_bio(name, data["bio"])
+	return jsonify({})
 
 @app.route('/newstory', methods=["POST"])
 @flask_login.login_required
 def new_story():
-    name = flask_login.current_user.id
-    data = request.json
-    title = data["title"]
-    del data["title"]
-    data["comments"] = []
-    db.new_story(name, title, data)
-    return jsonify({})
+	name = flask_login.current_user.id
+	data = request.json
+	title = data["title"].replace(" ", "_")
+	del data["title"]
+	data["comments"] = []
+	data["author"] = name
+	db.new_story(name, title, data)
+	return jsonify({})
+
+@app.route('/comment', methods=["POST"])
+@flask_login.login_required
+def comment():
+	name = flask_login.current_user.id
+	data = request.json
+	title = data["title"]
+	author = data["author"]
+	db.comment(author, name, title, data["comment"])
+	print(db.get_user_by("name", author))
+	return jsonify({"user": name, "comment": data["comment"]})
 
 @app.route('/deletestory', methods=["POST"])
 @flask_login.login_required
 def delete_story():
-    name = flask_login.current_user.id
-    data = request.json
-    title = data["title"]
-    db.delete_story(name, title)
-    return jsonify({})
+	name = flask_login.current_user.id
+	data = request.json
+	title = data["title"]
+	db.delete_story(name, title)
+	return jsonify({})
 
 """
 SOCKETS/CHAT STUFF
@@ -195,23 +218,23 @@ SOCKETS/CHAT STUFF
 
 @socketio.on('joined', namespace='/chat')
 def joined(message):
-    name = flask_login.current_user.id
-    room = session.get('room')
-    join_room(room)
-    emit('status', {'msg': name + ' joined'}, room=room)
+	name = flask_login.current_user.id
+	room = session.get('room')
+	join_room(room)
+	emit('status', {'msg': name + ' joined'}, room=room)
 
 @socketio.on('text', namespace='/chat')
 def text(message):
-    room = session.get('room')
-    name = flask_login.current_user.id
-    emit('message', {'msg': name + ':' + message['msg']}, room=room)
+	room = session.get('room')
+	name = flask_login.current_user.id
+	emit('message', {'msg': name + ':' + message['msg']}, room=room)
 
 @socketio.on('left', namespace='/chat')
 def left(message):
-    room = session.get('room')
-    name = flask_login.current_user.id
-    leave_room(room)
-    emit('status', {'msg': name + ' left'}, room=room)
+	room = session.get('room')
+	name = flask_login.current_user.id
+	leave_room(room)
+	emit('status', {'msg': name + ' left'}, room=room)
 
 """
 RUN APP

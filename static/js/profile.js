@@ -161,13 +161,6 @@ $("[contenteditable]").blur(function(){
 var showMakeChangesButton = false;
 var bio = "";
 
-$("#bio").focusin(() => {
-    $("#bio").addClass("form-control");
-})
-$("#bio").focusout(() => {
-    $("#bio").removeClass("form-control");
-})
-
 document.getElementById("bio").addEventListener("input", function() {
     bio = $("#bio").text();
     if (!showMakeChangesButton) {

@@ -14,3 +14,18 @@ var list_of_responses = ["I'm so sorry.",
   "I'm in your corner.",
   "I'm proud of you."];
 
+var random_responses = [];
+i = 0;
+
+while (random_responses.length < 3){
+  random_num = Math.floor(Math.random() * list_of_responses.length);
+  if (random_responses.includes(list_of_responses[i]) != true){
+    console.log("here");
+  }
+  i++;
+
+  //console.log(list_of_responses[Math.floor(Math.random() * list_of_responses.length));
+  
+}
+
+console.log(random_responses);

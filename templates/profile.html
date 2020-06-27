@@ -13,6 +13,7 @@
     
     <div id="story-modal" class="story-modal">
       <div class="story-modal-content">
+		  
         <span class="close"> &times; </span>
         
          <form>
@@ -82,20 +83,10 @@
     <b> Posts </b>
     <div id="posts" class="post-grid">
         <!-- If the user has posts saved they will appear here -->
+        
         {% if user_data.stories %}
             {% for title, story in user_data.stories.items() %}
-                <div class="card">
-                    <div class="container">
-                        <span data-val="{{title}}" class="close deletepost"> &times; </span>
-                        <div>
-                            {% for tag in story.tags %}
-                                <span class="badge badge-info">{{tag}}</span>
-                            {% endfor %}
-                        </div>
-                        <p style="text-align: center; font-weight: 700;">{{title}}</p>
-                        <p style="text-align: center;">{{story.content}}</p>
-                    </div>
-                </div>
+                {% include 'postcard.html'%}
             {% endfor %}
         {% endif %}
     </div>

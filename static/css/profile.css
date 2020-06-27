@@ -104,6 +104,8 @@ p {
   transition: 0.3s;
   width: 400px;
   height: 400px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .card:hover {
