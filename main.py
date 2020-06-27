@@ -79,10 +79,12 @@ def index():
 	# If the user isn't logged in the id isn't defined
 	try:
 		test = current_user.id
+		user = db.get_user_by("name", test)
 		return render_template('profile.html',
 			page_name="profile",
 			current_user=test,
-			profile_user=test)
+			profile_user=test,
+            user_data = user)
 	except: current_user = None
 	return render_template('index.html', page_name="index", current_user=current_user)
 
@@ -96,7 +98,8 @@ def profile(username):
 		return render_template('profile.html',
 			page_name="profile",
 			current_user=current_user,
-			profile_user=username)
+			profile_user=username,
+            user_data = profile_user_data)
 	else:
 		return render_template('404.html', message="User {} doesn't exist!".format(username))
 
@@ -154,6 +157,24 @@ def chat():
     session['room'] = "GeneralChat"
     room = session.get('room', '')
     return render_template('chat.html', name=name, room=room)
+
+@app.route('/changebio', methods=["POST"])
+@flask_login.login_required
+def change_bio():
+    name = flask_login.current_user.id
+    data = request.json
+    print(data)
+    db.change_bio(name, data["bio"])
+    return jsonify({})
+
+@app.route('/newstory', methods=["POST"])
+@flask_login.login_required
+def new_story():
+    name = flask_login.current_user.id
+    data = request.json
+    print(data)
+    #db.new_story(name, data["bio"])
+    return jsonify({})
 
 """
 SOCKETS/CHAT STUFF

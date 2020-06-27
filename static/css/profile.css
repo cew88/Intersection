@@ -1,17 +1,10 @@
-.image-name-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 10px;
-  grid-gap: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.story-modal, .tag-modal{
+
+.story-modal, .tag-modal, .bio-modal{
   display: none; 
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
@@ -26,22 +19,28 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  height: 700px;
+  height: 800px;
+  overflow-y: scroll;
+  border-radius:10px;
 }
 
 #story {
   width: 100%;
-  height: 300px;
-  overflow-wrap: break-word;
+  height: 230px;
 }
 
-.tag-modal-content {
+#modal-bio {
+  width: 100%;
+  height: 175px;
+}
+
+.tag-modal-content, .bio-modal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  height: 500px;
+  height: 325px;
 }
 
 .close {
@@ -60,19 +59,17 @@
 
 #box1{
   float: left;
-  width: 500px;
+  width: 50%;
   height: 200px;
-  margin: 10px;
-  padding: 10px;
+  padding: 20px;
   border: 1px dashed lightblue;
 }
 
 #box2{
   float: left;
-  width: 500px;
+  width: 50%;
   height: 200px;
-  margin: 10px;
-  padding: 10px;
+  padding: 20px;
   border: 1px dashed lightgrey;
 }
 
@@ -102,76 +99,31 @@ p {
     padding-right:7px;
 }
 
-/*
- * Masonry grid for posts
- */
-.masonry-grid {
-  display: flex;
-  flex-wrap: wrap;
-}
 .card {
-  max-width:500px;
-  max-height:200px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  transition: 0.3s;
+  width: 400px;
+  height: 400px;
 }
 
-/*
- * Badges
- */
-.badge {
-  margin-top:6px;
-  margin-bottom:4px;
-}
-.badge-danger {
-  background: #f54f40;
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 }
 
-/*
- * Gallery
- */
-
-.img-wrap {
-  position: relative;
-  margin: 0 7px 7px 0;
-  height:200px;
-  width:200px;
-  overflow: hidden;
-  transition:all 0.2s ease;
-  
-}
-.grid-image {
-  position: relative;
-  top: 40%;
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  height:300;
-  width:auto;
-}
-.masonry-grid .img-wrap:nth-child(n), .feature {
-  width:200px;
-}
-.masonry-grid .img-wrap:nth-child(6n), .feature {
-  width:408px;
-}
-.img-description {
-  font-size: 13px !important;
-  font-weight:600;
-  padding:15px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(245, 79, 64, 0.75); /* maybe like random colors?? */
-  color: #fff;
-  visibility: hidden;
-  opacity: 0;
-
-  /* transition effect. not necessary */
-  transition: opacity .2s, visibility .2s;
+.container {
+  padding: 5px 5px;
 }
 
-.img-wrap:hover .img-description {
-  visibility: visible;
-  opacity: 1;
+.post-grid {
+  display: grid;
+  width: 100%;
+  grid-gap: 50px;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+}
+
+[contenteditable]:empty:before {
+    content: attr(data-placeholder);
+    color: grey;
+    display: inline-block;
 }

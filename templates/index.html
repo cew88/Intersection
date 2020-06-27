@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block body %}
 <link rel="stylesheet" href="/static/css/landing_animation.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--
 	The content of the landing page goes here.
 	No need to copy over HTML for navbars, scripts, and links to styles!
@@ -36,7 +38,7 @@
 <main role="main">
     <div class="jumbotron">
         <div id="bubbles">
-          <h1 class="display-4">Share your story. <br>Connect with others.</h1>
+          <h1 class="display-4">Find out how you <br>intersect with others.</h1>
           <hr>
           <p class="lead" style="max-width:400px"> Intersection is an anonymous platform allowing people to connect with others of shared identities and experiences. </p>
           <a class="btn btn-primary" href="/login">Login/Register</a>
@@ -103,31 +105,166 @@
         <center>
           <h1> Meet the Team </h1>
           <div class="team-grid">
+            <div class="row">
+              <div class="column">
+                <div class="card">
+                  <img src="/static/images/Michelle.png" alt="Jane" style="width:100%">
+                  <div class="container">
+                    <br>
+                    <h2>Michelle Bryson</h2>
+                    <p class="title">Designer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <br>
+                  </div>
+                </div>
+              </div>
 
-            <div>
-              <p> Michelle Bryson </p>
+              <div class="column">
+                <div class="card">
+                  <img src="/static/images/Bach.png" alt="Mike" style="width:100%">
+                  <div class="container">
+                    <br>
+                    <h2>Bach Nguyen</h2>
+                    <p class="title">Designer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <br>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="column">
+                <div class="card">
+                  <img src="/static/images/Jendy.png" alt="John" style="width:100%">
+                  <div class="container">
+                    <br>
+                    <h2>Jendy Ren</h2>
+                    <p class="title">Designer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <br>
+                  </div>
+                </div>
+              </div>
 
-            </div>
+              <div class="column">
+                <div class="card">
+                  <img src="/static/images/Christina.png" alt="John" style="width:100%">
+                  <div class="container">
+                    <br>
+                    <h2>Christina Wong</h2>
+                    <p class="title">Designer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <br>
+                  </div>
+                </div>
+              </div>
 
-            <div>
-              <p> Bach Nguyen </p>
-
-            </div>
-
-            <div>
-              <p> Jendy Ren </p>
-
-            </div>
-
-            <div>
-              <p> Christina Wong </p>
-            </div>
-
-            <div>
-              <p> John Paul Bunn </p>
+              <div class="column">
+                <div class="card">
+                  <img src="/static/images/John.png" alt="John" style="width:100%">
+                  <div class="container">
+                    <br>
+                    <h2>John Paul Bunn</h2>
+                    <p class="title">Designer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <br>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <!-- 
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" id="michelle">
+                    <img src="/static/images/Michelle.jpg" alt="Avatar" style="width:230px;height:230px;">
+                    <br><br>
+                    <h2>Michelle</h2> 
+                  </div>
+                  <div class="flip-card-back">
+                    <br><br>
+                    <a href="#about"><i class="fa fa-linkedin-square" style="font-size:48px;color:blue"></i></a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/static/images/Bach.jpg" alt="Avatar" style="width:230px;height:230px;">
+                    <br><br>
+                    <h2>Bach</h2> 
+                  </div>
+                  <div class="flip-card-back">
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/static/images/Bach.jpg" alt="Avatar" style="width:230px;height:230px;">
+                    <br><br>
+                    <h2>Jendy</h2> 
+                  </div>
+                  <div class="flip-card-back">
+                    
+                    <p>Architect & Engineer</p> 
+                    <p>We love that guy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/static/images/Michelle.jpg" alt="Avatar" style="width:230px;height:230px;">
+                    <br><br>
+                    <h2>Christina</h2> 
+                  </div>
+                  <div class="flip-card-back">
+                    <p>Architect & Engineer</p> 
+                    <p>We love that guy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="/static/images/Michelle.jpg" alt="Avatar" style="width:230px;height:230px;">
+                    <br><br>
+                    <h2>John</h2> 
+                  </div>
+                  <div class="flip-card-back">
+                    
+                    <p>Architect & Engineer</p> 
+                    <p>We love that guy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          -->
         </center>
+        <br><br><br>
+        <br><br><br>
+      
+            
+
+        </div>
+      </div>
 </main>
 
 

@@ -2,169 +2,25 @@
 {% block body %}
 <link rel="stylesheet" href="/static/css/profile.css">
 
-
-{% if current_user == profile_user %}
 	<!-- Display the following content if this is the user's own profile -->
 
   <div class="main">
-    <h1 class="title">{{current_user}}</h1>
+    <h1 class="title">{{profile_user}}</h1>
     <div id="tags"></div>
     <hr>
     <b> About Me </b>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper accumsan magna. Phasellus sit amet vulputate nulla, ac semper odio. Sed tempus ipsum enim, et hendrerit ipsum tristique eu. Nunc id semper neque. Etiam ut porttitor erat. Suspendisse venenatis interdum turpis, vitae bibendum ex ultricies ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum libero arcu, nec tempus est finibus sed. Pellentesque tincidunt orci eu ipsum dignissim congue. Cras facilisis vestibulum nisl eget semper. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-    <b> Posts </b>
-    <div class="masonry-grid">
-        <div class="img-wrap">
-            <a href="project.html">
-            <img class="grid-image" src="https://picsum.photos/600/300?random=1" alt="Card image cap">
-            <div class="img-description">
-                <h3 class="mb-0">
-                <b class="card-title">Post 1</b>
-                </h3>
-                <span class="badge badge-danger">Post</span>
-                <p class="card-text mb-auto">Post description here</p>
-            </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=2346346" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=21345145" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=23463" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=213451" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=2353" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=21451" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=2346" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=23453" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=8" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-        <div class="img-wrap">
-            <a href="project.html">
-                <img class="grid-image" src="https://picsum.photos/600/300?random=6" alt="Card image cap">
-                <div class="img-description">
-                    <h3 class="mb-0">
-                    <b class="card-title">Post 2</b>
-                    </h3>
-                    <span class="badge badge-danger">Post</span>
-                    <p class="card-text mb-auto">Post description here</p>
-                </div>
-            </a>
-        </div>
-    </div>
-      <div class="image-name-grid">
-        <div> <img src="/static/images/1.png" width="200px"> </div>
-        
-        <div>
-          <button class="btn btn-primary" id="update-tags"> Update tags </button>
-        </div>
-      </div>
-
-    <button class="btn btn-primary" id="open-compose-story">Add your story</button>
+    <p id="bio" {% if current_user == profile_user %} data-placeholder="Click here to edit your bio. Tell others about yourself!" contenteditable="true" {% endif %}>{% if user_data.bio %} {{user_data.bio}} {% endif %}</p>
+    
     <div id="story-modal" class="story-modal">
       <div class="story-modal-content">
         <span class="close"> &times; </span>
         
          <form>
-          <label for="story"> Compose your story </label><br>
-          <input type="text" id="story"></input>
-          
-          <br><br>
+          <label for="story-title"> <p>Title your story </p></label><br>
+          <input class="form-control" type="text" id="story-title"></input>
+          <label for="story"> <p>Compose your story </p></label><br>
+          <textarea class="form-control" id="story" rows="3"></textarea>
+          <br>
           <p>Drag and drop tags to help us categorize your story.</p>
 
           <div id="box1" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -172,18 +28,16 @@
 
           <div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)">
             
-            <p ondragstart="dragStart(event)" draggable="true" id="sexual-assault" class="tags">sexual-assualt-survivor </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="domestic-abuse" class="tags"> domestic-abuse-survivor </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
             <p ondragstart="dragStart(event)" draggable="true" id="LGBTQ+" class="tags"> LGBTQ+ </p>
             <p ondragstart="dragStart(event)" draggable="true" id="asian-american" class="tags"> asian-american </p>
             <p ondragstart="dragStart(event)" draggable="true" id="down-syndrome" class="tags"> down-syndrome </p>
             <p ondragstart="dragStart(event)" draggable="true" id="vitiligo" class="tags"> vitiligo </p>
-            
           </div>
+    
          </form>
-
-         <br><br>
-         <button class="btn btn-primary"> Submit </button>
+         <button class="btn btn-primary" id="submit-story"> Submit </button>
       </div>
     </div>
 
@@ -197,27 +51,40 @@
         </div>
 
         <div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)">
-          <p ondragstart="dragStart(event)" draggable="true" id="t-sexual-assault" class="tags">sexual-assualt-survivor </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t-domestic-abuse" class="tags"> domestic-abuse-survivor </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t-LGBTQ+" class="tags"> LGBTQ+ </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t-asian-american" class="tags"> asian-american </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t-down-syndrome" class="tags"> down-syndrome </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t-vitiligo" class="tags"> vitiligo </p>
+          
+          <p ondragstart="dragStart(event)" draggable="true" id="t- sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
+
+          <p ondragstart="dragStart(event)" draggable="true" id="t- domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
+          
+          <p ondragstart="dragStart(event)" draggable="true" id="t- LGBTQ+" class="tags"> LGBTQ+ </p>
+          
+          <p ondragstart="dragStart(event)" draggable="true" id="t- asian-american" class="tags"> asian-american </p>
+          
+          <p ondragstart="dragStart(event)" draggable="true" id="t- down-syndrome" class="tags"> down-syndrome </p>
+          
+          <p ondragstart="dragStart(event)" draggable="true" id="t- vitiligo" class="tags"> vitiligo </p>
         </div>
 
         <button class="btn btn-primary" id="submit-tags"> Submit </button>
-      </div>
-
-      
+      </div>      
     </div>
+
+    {% if current_user == profile_user %}
+    <div>
+      <button class="btn btn-primary hide" id="change-bio">Change bio</button>
+
+      <button class="btn btn-primary" id="open-compose-story">Add your story</button>
+      
+      <button class="btn btn-primary" id="update-tags"> Update tags </button>
+    </div>
+    {% endif %}
+    <br>
+    <b> Posts </b>
+    <div id="posts" class="post-grid"></div>
    
 
   </div>
 
  
 <script src="/static/js/profile.js"></script>
-{% else %}
-	<!-- Display stuff if this is other people's profiles -->
-	<h2> You are viewing {{profile_user}}'s profile. </h2>
-{% endif %}
 {% endblock %}

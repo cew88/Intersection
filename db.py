@@ -43,6 +43,11 @@ def verify_user(name, pwrd):
 def delete_user(name):
 	return users.delete_one({"name": name})
 
+def change_bio(name, bio):
+    user = get_user_by("name", name)
+    if user:
+        users.update_one({'name': name}, {"$set": {"bio": bio}})
+
 ### DANGER ###
 def delete_all_users():
 	return users.delete_many({})
