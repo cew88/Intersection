@@ -25,10 +25,10 @@
           <br>
           <p>Drag and drop tags to help us categorize your story.</p>
 
-          <div id="box1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="story-box1" ondrop="drop(event)" ondragover="allowDrop(event)">
           </div>
 
-          <div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="story-box2" ondrop="drop(event)" ondragover="allowDrop(event)">
             
             <p ondragstart="dragStart(event)" draggable="true" id="sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
             <p ondragstart="dragStart(event)" draggable="true" id="domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
@@ -50,10 +50,9 @@
     
          </form>
          <br><br>
-         <label for="other-tag"> <p> Add another tag </p></label><br>
-         <input class="form-control" type="text" id="other-tag" maxlength="100"></input>
-         <br>
-         <button class="btn btn-primary" id="add-new-tag"> Add a tag </button>
+         <label for="other-story-tag"> <p> Add another tag </p></label><br>
+         <input class="form-control" type="text" id="other-story-tag" maxlength="100"></input>
+         <button class="btn btn-primary" id="add-new-story-tag"> Add a tag </button>
          <button class="btn btn-primary" id="submit-story"> Submit </button>
          <br>
       </div>
@@ -65,10 +64,10 @@
         <span class="close"> &times; </span>
         <p>Drag and drop tags</p>
 
-        <div id="box1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="tag-box1" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div>
 
-        <div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="tag-box2" ondrop="drop(event)" ondragover="allowDrop(event)">
           
           <p ondragstart="dragStart(event)" draggable="true" id="t- sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
           <p ondragstart="dragStart(event)" draggable="true" id="t- domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
@@ -78,16 +77,19 @@
           <p ondragstart="dragStart(event)" draggable="true" id="t- vitiligo" class="tags"> vitiligo </p>
           <p ondragstart="dragStart(event)" draggable="true" id="t- cancer" class="tags"> cancer </p>
           <p ondragstart="dragStart(event)" draggable="true" id="t- cystic-fibrosis" class="tags"> cystic-fibrosis </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="t- biracial" class="tags"> biracial </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="t- multiple-sclerosis" class="tags"> multiple-sclerosis </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="t- pcos" class="tags"> pcos </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="t- tourette-syndrome" class="tags"> tourette-syndrome </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="t- anxiety" class="tags"> anxiety </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="t- depression" class="tags"> depression </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="t- transgender" class="tags"> transgender </p>
+          
+          <p ondragstart="dragStart(event)" draggable="true" id="t- biracial" class="tags"> biracial </p>
+          <p ondragstart="dragStart(event)" draggable="true" id="t- multiple-sclerosis" class="tags"> multiple-sclerosis </p>
+          <p ondragstart="dragStart(event)" draggable="true" id="t- pcos" class="tags"> pcos </p>
+          <p ondragstart="dragStart(event)" draggable="true" id="t- tourette-syndrome" class="tags"> tourette-syndrome </p>
+          <p ondragstart="dragStart(event)" draggable="true" id="t- anxiety" class="tags"> anxiety </p>
+          <p ondragstart="dragStart(event)" draggable="true" id="t- depression" class="tags"> depression </p>
+          <p ondragstart="dragStart(event)" draggable="true" id="t- transgender" class="tags"> transgender </p>
         </div>
-        
-        <button class="btn btn-primary" id="add-new-tag"> Add a tag </button>
+
+        <label for="other-page-tag"> <p> Add another tag </p></label><br>
+        <input class="form-control" type="text" id="other-page-tag" maxlength="100"></input>
+        <button class="btn btn-primary" id="add-new-page-tag"> Add a tag </button>
         <button class="btn btn-primary" id="submit-tags"> Submit </button>
       </div>      
     </div>

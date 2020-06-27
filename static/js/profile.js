@@ -74,15 +74,15 @@ document.getElementById("submit-story").onclick = function(){
   //Reset form values after submitting
   document.getElementById("story-title").value = '';
   document.getElementById("story").value = '';
-  document.getElementById("box1").innerHTML = box1;
-  document.getElementById("box2").innerHTML = box2;
+  document.getElementById("story-box1").innerHTML = box1;
+  document.getElementById("story-box2").innerHTML = box2;
 }
 
 //Save the original state of tag boxes when the page was loaded
 var box1, box2;
 window.onload = function(){
-  box1 = document.getElementById("box1").innerHTML;
-  box2 = document.getElementById("box2").innerHTML;
+  box1 = document.getElementById("story-box1").innerHTML;
+  box2 = document.getElementById("story-box2").innerHTML;
 }
 
 //Handle profile tags
@@ -210,19 +210,30 @@ $(".deletepost").click(e => {
     });
 });
 
-console.log(document.getElementById("box2"));
-
-document.getElementById("add-new-tag").onclick = function(){
-  console.log(document.getElementById("other-tag").value);
-  //<p ondragstart="dragStart(event)" draggable="true" id="t- sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
+document.getElementById("add-new-story-tag").onclick = function(){
+  console.log(document.getElementById("other-story-tag").value);
   new_tag = document.createElement('p');
   new_tag.setAttribute("ondragstart", "dragStart(event)");
   new_tag.setAttribute("draggable", "true");
-  new_tag.setAttribute("id", document.getElementById("other-tag").value);
+  new_tag.setAttribute("id", document.getElementById("other-story-tag").value);
   new_tag.setAttribute("class", "tags");
-  new_tag.appendChild(document.createTextNode(document.getElementById("other-tag").value)
+  new_tag.appendChild(document.createTextNode(document.getElementById("other-story-tag").value)
+  );
+  document.getElementById("story-box2").appendChild(new_tag);
+  document.getElementById("story-box2").appendChild(document.createTextNode(" "));
+}
+
+
+document.getElementById("add-new-page-tag").onclick = function(){
+  console.log(document.getElementById("other-page-tag").value);
+  new_tag = document.createElement('p');
+  new_tag.setAttribute("ondragstart", "dragStart(event)");
+  new_tag.setAttribute("draggable", "true");
+  new_tag.setAttribute("id", "t- " + document.getElementById("other-page-tag").value);
+  new_tag.setAttribute("class", "tags");
+  new_tag.appendChild(document.createTextNode(document.getElementById("other-page-tag").value)
   );
 
-  document.getElementById("box2").appendChild(new_tag);
-  document.getElementById("box2").appendChild(document.createTextNode(" "));
+  document.getElementById("tag-box2").appendChild(new_tag);
+  document.getElementById("tag-box2").appendChild(document.createTextNode(" "));
 }

@@ -12,6 +12,7 @@
 .introtext{
   float: left;
   width: 40%;
+  margin-top: 6%;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -363,10 +364,18 @@ html {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
   }
   .introimg{
+    margin-top: 5%;
     float: left;
-    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+  
+  .introimg img{
+    width: 90%;
   }
   .jumbotron-grid1 {
     width: 100%;
