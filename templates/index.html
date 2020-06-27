@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block body %}
+<link rel="stylesheet" href="/static/css/landing_animation.css">
+<!--
+	The content of the landing page goes here.
+	No need to copy over HTML for navbars, scripts, and links to styles!
+-->
+<nav class="navbar navbar-expand-md navbar-light navbar-fixed-top">
+    <a class="navbar-brand" href="/">
+        <!--Logo goes here-->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="#about"> <img src= "/static/images/logoimg.png" alt="logo" style="height: 55px"> </a>
+            </li>
+            <li class="nav-item">
+                <h2>intersection</h2>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <!-- If the user is logged in -->
+            {% if current_user %}
+            <li class="nav-item">
+                <a id="dashboard-link" class="nav-link" href="/logout">Logout</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+<br><br><br>
+<main role="main">
+    <div class="jumbotron">
+        <div id="bubbles">
+          <h1 class="display-4">Share your story. <br>Connect with others.</h1>
+          <hr>
+          <p class="lead" style="max-width:400px"> Intersection is an anonymous platform allowing people to connect with others of shared identities and experiences. </p>
+          <a class="btn btn-primary" href="/login">Login or register</a>
+            <img class="landing-img" height="450" src="/static/images/person.jpg"></img>
+            <div class="bubble x1"></div>
+            <div class="bubble x2"></div>
+            <div class="bubble x3"></div>
+            <div class="bubble x4"></div>
+            <div class="bubble x5"></div>
+            <div class="bubble x6"></div>
+            <div class="bubble x7"></div>
+            <div class="bubble x8"></div>
+            <div class="bubble x9"></div>
+            <div class="bubble x10"></div>
+        </div>
+    </div>
+
+    <div class="jumbotron-infographic">
+      <br><br><br><br><br><br>
+      <div class="grid-container">
+        <div>
+          <img src="/static/images/1.png" style="width: 95%"></img>
+        </div>
+        <div>
+          <img src="/static/images/2.png" style="width: 95%"></img>
+        </div>
+        <div>
+          <img src="/static/images/3.png" style="width: 95%"></img>
+        </div>  
+        <div>
+          <img src="/static/images/4.png" style="width: 95%"></img>
+        </div>
+        <div>
+          <img src="/static/images/5.png" style="width: 95%"></img>
+        </div>
+      </div>
+    </div>
+    
+    <div class="jumbotron-grid">
+          <div style="max-width:800px"> 
+            <h3> How it works </h3>
+            <li> When you join Intersection, you will create a profile where you can add tags that correspond to your identities or experiences that you are interested in connecting with people through. For example, you might add the tags woman, biracial, queer, and domestic abuse survivor. </li>
+            <li> Then, you would have access to forums where people of those experiences can share their stories with one another. Intersection will also give you friend suggestions based on how many identities and experiences you have in common.</li>
+            <li> Once you've added friends, you'll be able to chat one-on-one with your new connections and further discuss your stories.</li>
+          </div>
+
+          <div> 
+            <h3> Why you should use Intersection </h3>
+            <p> Talking about your experiences with people who understand and relate to them can be therapeutic and beneficial to your mental health. Finding others with common identities can alleviate one's sense of isolation and encourage a feeling of belonging.</p>
+          </div>
+
+          <div> 
+            <h3> Steps </h3>
+            <p> add stuff here </p>
+          </div>
+
+          <div> 
+            <h3> Future Plans </h3>
+            <p> add stuff here </p>
+          </div>
+        </div>
+        
+        <br><br>
+        <center>
+          <h1> Meet the Team </h1>
+          <div class="team-grid">
+
+            <div>
+              <p> Michelle Bryson </p>
+
+            </div>
+
+            <div>
+              <p> Bach Nguyen </p>
+
+            </div>
+
+            <div>
+              <p> Jendy Ren </p>
+
+            </div>
+
+            <div>
+              <p> Christina Wong </p>
+            </div>
+
+            <div>
+              <p> John Paul Bunn </p>
+            </div>
+          </div>
+        </center>
+</main>
+
+
+{% endblock %}

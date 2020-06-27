@@ -1,0 +1,208 @@
+
+.landing-img {
+    margin-top: -400px;
+    margin-left: 55%;
+}
+
+#bubbles {
+    padding: 100px 0;
+    width: 100% !important;
+    height: 360px !important;
+}
+.bubble {
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    position: absolute;
+}
+
+.x1 {
+    width: 330px;
+    height: 330px;
+    background: rgba(178, 219, 173, 0.85);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+    width: 320px;
+    height: 320px;
+    background: rgba(181, 226, 248, 0.85);
+    left: 10%;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.5;
+    -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.x3 {
+    width: 320px;
+    height: 320px;
+    background: rgba(172, 184, 251, 0.85);
+    left: 20%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+    -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x4 {
+    width: 340px;
+    height: 340px;
+    background: rgba(246, 173, 195, 0.85);
+    left: 35%;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.35;
+    -webkit-animation: moveclouds 18s linear infinite, sideWays 7s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 18s linear infinite, sideWays 7s ease-in-out infinite alternate;
+    -o-animation: moveclouds 18s linear infinite, sideWays 7s ease-in-out infinite alternate;
+}
+.x5 {
+    width: 320px;
+    height: 320px;
+    background: rgba(250, 218, 164, 0.85);
+    left: 40%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3; 
+    -webkit-animation: moveclouds 12s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 12s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 12s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+
+.x6 {
+    width: 300px;
+    height: 300px;
+    background: rgba(178, 219, 173, 0.85);
+    left: 53%;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 16s linear infinite, sideWays 6s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 16s linear infinite, sideWays 6s ease-in-out infinite alternate;
+    -o-animation: moveclouds 16s linear infinite, sideWays 6s ease-in-out infinite alternate;
+}
+
+.x7 {
+    width: 320px;
+    height: 320px;
+    background: rgba(250, 218, 164, 0.85);
+    left: 67%;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.5;
+    -webkit-animation: moveclouds 22s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 22s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 22s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.x8 {
+    width: 310px;
+    height: 310px;
+    background: rgba(181, 226, 248, 0.85);
+    left: 78%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+    -webkit-animation: moveclouds 18s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 18s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 18s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x9 {
+    width: 330px;
+    height: 330px;
+    background: rgba(246, 173, 195, 0.85);
+    left: 85%;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.35;
+    -webkit-animation: moveclouds 15s linear infinite, sideWays 6s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite, sideWays 6s ease-in-out infinite alternate;
+    -o-animation: moveclouds 15s linear infinite, sideWays 6s ease-in-out infinite alternate;
+}
+.x10 {
+    width: 320px;
+    height: 320px;
+    background: rgba(172, 184, 251, 0.85);
+    left: 93%;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3; 
+    -webkit-animation: moveclouds 12s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 12s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 12s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes moveclouds { 
+    0% { 
+        top: 400px;
+        opacity: 0%;
+    }
+    50% {
+        opacity: 70%;
+    }
+    100% { 
+        top: -700px;
+        opacity: 0%;
+    }
+}
+
+@-webkit-keyframes sideWays { 
+    0% { 
+        margin-left:-100px;
+    }
+    100% { 
+        margin-left:40px;
+    }
+}
+
+@-moz-keyframes moveclouds {     
+    0% { 
+        top: 500px;
+    }
+
+    100% { 
+        top: -500px;
+    }
+}
+
+@-moz-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+@-o-keyframes moveclouds {
+    0% { 
+        top: 500px;
+    }
+    100% { 
+        top: -500px;
+    }
+}
+
+@-o-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}

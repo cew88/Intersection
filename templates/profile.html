@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block body %}
+<link rel="stylesheet" href="/static/css/profile.css">
+
+
+{% if current_user == profile_user %}
+	<!-- Display the following content if this is the user's own profile -->
+
+  <div class="main">
+
+    <center><h1>Profile</h1>
+      <div class="image-name-grid">
+        <div> <img src="/static/images/1.png" width="200px"> </div>
+        
+        <div>
+          <p>{{current_user}}</p>
+          <p> Your tags: </p>
+          <div id="your-tags"> </div>
+          <button id="update-tags"> Update tags </button>
+        </div>
+      </div>
+    </center>
+
+    <button id="open-compose-story">Add your story</button>
+
+    <div id="story-modal" class="modal">
+      
+      <div class="story-modal-content">
+        <span class="close"> &times; </span>
+        
+         <form>
+          <label for="story"> Compose your story </label>
+          <input type="text" id="story"></input>
+          
+          <br><br><br><br>
+          <p>Drag and drop tags to help us categorize your story.</p>
+
+          <div id="box1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          </div>
+
+          <div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            
+            <p ondragstart="dragStart(event)" draggable="true" id="sexual-assault" class="tags">sexual-assualt-survivor </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="domestic-abuse" class="tags"> domestic-abuse-survivor </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="LGBTQ+" class="tags"> LGBTQ+ </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="asian-american" class="tags"> asian-american </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="down-syndrome" class="tags"> down-syndrome </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="vitiligo" class="tags"> vitiligo </p>
+          </div>
+         </form>
+
+         <button> Submit </button>
+
+      </div>
+
+    </div>
+
+
+  
+   
+
+  </div>
+
+ 
+<script src="/static/js/profile.js"></script>
+{% else %}
+	<!-- Display stuff if this is other people's profiles -->
+	<h2> You are viewing {{profile_user}}'s profile. </h2>
+{% endif %}
+{% endblock %}

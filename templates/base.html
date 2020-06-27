@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="static/images/logoimg.png">
+	<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Page style -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body id="{{page_name}}-page">
+	<!-- Decide if we want navbars -->
+  {% if current_user %}
+    <div class="sidenav">
+        <ul>
+        <li> <a href="/chat"> Chat <img src="/static/images/logo.png"> </a></li>
+        <li> <a href="/discover">Discover</a></li>
+        <li> <a href="/profile">Profile</a></li>
+        <li> <a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+  {% endif %}
+
+  <div class="main"></div>
+
+	<!--
+	The "base.html" serves as the "base" for all the other pages.
+	Everypage shares a common element (i.e navbars) and this html file helps
+	reduce repetition and copypasting the same html elements across pages
+	-->
+	<!-- The content for other pages are substituted within this block. -->
+	{% block body %}{% endblock %}
+	
+	<!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+	<script src="/static/js/index.js"></script>
+</body>
+</html>

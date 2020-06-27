@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Page style -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/index.css">
+		<link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body id="{{page_name}}-page" class="text-center">
+	<form class="form-signin" method="POST">
+    
+		<!-- Logo goes here -->
+		<!-- Alert the user if authentication was successful or not -->
+		
+		<h1 class="h3 mb-3" id="login-text">Sign In</h1>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+			<div class="alert {% if newuser %} alert-info {% else %} alert-danger {% endif %}" role="alert">
+				{{ message }}
+			</div>
+			{% endfor %}
+		{% endif %}
+		{% endwith %}
+		<div class="form-label-group">
+			<input name="username" type="text" id="username" class="form-control" placeholder="Username" required autofocus>
+			<label for="username">Your <b> awesome </b> username</label>
+		</div>
+		<div class="form-label-group">
+			<input name="password" type="password" id="password" class="form-control" placeholder="Password" required>
+			<label for="password">Your <b> top secret </b> password</label>
+		</div>
+		<div id="password2-div" class="form-label-group hide">
+			<input name="password2" type="password" id="password2" class="form-control" placeholder="Enter Your pasword Again"></input>
+			<label for="password2">Type your password again!</label>
+		</div>
+		
+		<input class="btn btn-lg btn-primary btn-block" type="submit" id='submit' value="Login"></input>
+		<br>
+		<a href="#" id="switch" onclick="swap()">Don't have an account? Sign Up</a>
+	</form>
+	
+	<!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+	<script src="/static/js/index.js"></script>
+	<script src="/static/js/login.js"></script>
+</body>
+</html>
