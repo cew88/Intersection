@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 {% block body %}
 	<link rel="stylesheet" href="/static/css/profile.css">
-    <link rel="stylesheet" href="/static/css/discover.css">
-    <script src="static/js/discover.js"></script>
+  <link rel="stylesheet" href="/static/css/discover.css">
+  <script src="static/js/discover.js"></script>
 
+  <!--<h2 class="section-title discover">Discover</h2>-->
 	<div class="main">
 		<h1 class="title">Discover</h1>
+
+    <button class="btn btn-primary" id="filter"> Filter </button>
+    <button class="btn btn-primary" id="sort" onclick="dropDownFunction()"> Sort </button>
+    
+    <br><br>
+    
 		<div id="posts" class="post-grid">
 		{% if featured %}
 			{% for title, story in featured %}

@@ -36,7 +36,7 @@ document.getElementById("submit-story").onclick = function(){
     tags.appendChild(tag_to_add);
     tags.appendChild(document.createTextNode(' '));
   }
-
+  /*
   post_content.appendChild(tags);
 
   var title = document.createElement('p');
@@ -56,7 +56,7 @@ document.getElementById("submit-story").onclick = function(){
   post_card.appendChild(post_content);
 
   document.getElementById("posts").appendChild(post_card);
-
+  */
   // Backend stuff
   $.ajax({
         url: '/newstory',
@@ -64,18 +64,26 @@ document.getElementById("submit-story").onclick = function(){
         data: JSON.stringify({ title: document.getElementById("story-title").value, content: document.getElementById("story").value, tags:story_tags}),
         contentType: "application/json; charset=UTF-8",
         success: function(response) {
-            console.log( response );
+            $("#posts").append(response);
         },
         error: function(error) {
             console.log(error);
         }
     });
 
+  //Reset form values after submitting
   document.getElementById("story-title").value = '';
   document.getElementById("story").value = '';
-  //NEED TO FIGURE OUT HOW TO RESET STORY TAGS
+  document.getElementById("box1").innerHTML = box1;
+  document.getElementById("box2").innerHTML = box2;
 }
 
+//Save the original state of tag boxes when the page was loaded
+var box1, box2;
+window.onload = function(){
+  box1 = document.getElementById("box1").innerHTML;
+  box2 = document.getElementById("box2").innerHTML;
+}
 
 //Handle profile tags
 function profile_tags(personal_tags){

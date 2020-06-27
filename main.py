@@ -80,7 +80,6 @@ def index():
 	try:
 		test = current_user.id
 		user = db.get_user_by("name", test)
-		print(user["stories"])
 		return render_template('profile.html',
 			page_name="profile",
 			current_user=test,
@@ -113,7 +112,7 @@ def discover():
 
 	[posts.update(x["stories"]) for x in list(db.users.find({}, {'stories':1, '_id':0})) if "stories" in x]
 	featured = list(sorted(posts.items(), key=lambda k: len(k[1]["comments"])))[::-1]
-	return render_template('discover.html', featured=featured, user_data=user_data)
+	return render_template('discover.html', page_name="discover", featured=featured, user_data=user_data)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -189,7 +188,7 @@ def new_story():
 	data["comments"] = []
 	data["author"] = name
 	db.new_story(name, title, data)
-	return jsonify({})
+	return jsonify(render_template("postcard.html", title=title, story=data))
 
 @app.route('/comment', methods=["POST"])
 @flask_login.login_required

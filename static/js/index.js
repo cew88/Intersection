@@ -14,7 +14,7 @@ $( document ).ready(function() {
 
 $(".comment").click(e => {
     title = $(e.currentTarget).data("val")
-	author = $(e.currentTarget).data("author")
+	  author = $(e.currentTarget).data("author")
     console.log(title);
     com = $("#comtext-"+title).val();
     // Empty textbox

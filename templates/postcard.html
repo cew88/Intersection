@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="modal-{{title|replace(" ", "_")}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
@@ -15,8 +14,13 @@
                 </div>
                 <div class="col" id="combox-{{title|replace(" ", "_")}}">
                     <h4><b>Comments</b></h4>
-                    <div id="suggested-comments"></div>
-                    <input id="comtext-{{title|replace(" ", "_")}}" type="text" placeholder="Make a comment!" class="form-control"></input> <button data-author="{{story.author}}" data-val="{{title|replace(" ", "_")}}" class="comment btn btn-primary">Comment</button>
+                    <input id="comtext-{{title|replace(" ", "_")}}" type="text" placeholder="Make a comment!" class="form-control"></input>
+
+                    <br>
+                    <p id="suggested-prompt"> Can't think of what to say? Try: </p>
+                    <div class="suggested-comments-div"></div>
+                    
+                    <button data-author="{{story.author}}" data-val="{{title|replace(" ", "_")}}" class="comment btn btn-primary">Comment</button>
                     <hr>
                     {% for poster, com in story.comments %}
                         <div><b> {{poster}} </b> {{com}}</div>
@@ -32,7 +36,7 @@
 </div>
 <div class="card">
     <div class="container">
-        <span data-toggle="modal" data-target="#modal-{{title|replace(" ", "_")}}">
+        <span class="expand-card" data-toggle="modal" data-target="#modal-{{title|replace(" ", "_")}}">
             <i class="fa fa-window-maximize" aria-hidden="true"></i>
         </span>
 		{% if current_user == profile_user %}
