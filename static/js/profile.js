@@ -16,16 +16,21 @@ window.onclick = function(event){
     storyModal.style.display = "none";
   }
 }
-
+/*
 document.getElementById("submit-story").onclick = function(){
-  document.getElementById("posts").appendChild();
+  cument.getElementById("posts").appendChild();
 }
+*/
 
 //Handle profile tags
 function profile_tags(personal_tags){
-  var yourTags = document.getElementById("your-tags");
+  var yourTags = document.getElementById("tags");
   for (tag_index = 0; tag_index < personal_tags.length; tag_index++){
-    yourTags.appendChild(document.getElementById(personal_tags[tag_index]));
+    tag_to_add = document.createElement('span');
+    tag_to_add.setAttribute("class", "badge badge-info");
+    tag_to_add.textContent = personal_tags[tag_index];
+
+    yourTags.appendChild(tag_to_add);
     yourTags.appendChild(document.createTextNode(' '));
   }
 }

@@ -8,9 +8,7 @@
 
   <div class="main">
     <h1 class="title">{{current_user}}</h1>
-    <span class="badge badge-primary"> Tag1 </span>
-    <span class="badge badge-danger"> Tag2 </span>
-    <span class="badge badge-info"> Tag3 </span>
+    <div id="tags"></div>
     <hr>
     <b> About Me </b>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper accumsan magna. Phasellus sit amet vulputate nulla, ac semper odio. Sed tempus ipsum enim, et hendrerit ipsum tristique eu. Nunc id semper neque. Etiam ut porttitor erat. Suspendisse venenatis interdum turpis, vitae bibendum ex ultricies ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum libero arcu, nec tempus est finibus sed. Pellentesque tincidunt orci eu ipsum dignissim congue. Cras facilisis vestibulum nisl eget semper. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
@@ -153,9 +151,6 @@
         <div> <img src="/static/images/1.png" width="200px"> </div>
         
         <div>
-          <p>{{current_user}}</p>
-          <p> Your tags: </p>
-          <div id="your-tags"> </div>
           <button class="btn btn-primary" id="update-tags"> Update tags </button>
         </div>
       </div>
