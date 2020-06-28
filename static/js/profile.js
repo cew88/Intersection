@@ -37,11 +37,20 @@ document.getElementById("submit-story").onclick = function(){
     tags.appendChild(document.createTextNode(' '));
   }
 
+  var charactersToRemove = [",", "'", ":", "-", ".", "{", "}", "(", ")", "/", "~", "`", "<", ">", "?", "!", "@", "#", "$", "%", "^", "&", "*"];
+  var storyTitle = document.getElementById("story-title").value;
+  
+  for (charInd = 0; charInd < storyTitle.length; charInd++){
+    if (charactersToRemove.includes(storyTitle[charInd])){
+      storyTitle = storyTitle.replace(storyTitle[charInd], "");
+    }
+  }
+
   // Backend stuff
   $.ajax({
         url: '/newstory',
         type: "POST",
-        data: JSON.stringify({ title: document.getElementById("story-title").value, content: document.getElementById("story").value, tags:story_tags}),
+        data: JSON.stringify({ title: storyTitle, content: document.getElementById("story").value, tags:story_tags}),
         contentType: "application/json; charset=UTF-8",
         success: function(response) {
             $("#posts").append(response);

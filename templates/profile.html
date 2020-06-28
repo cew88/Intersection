@@ -37,9 +37,14 @@
 
       <br>
       <b> Friends </b>
+	  <br>
+	  {% if user_data.friends %}
       {% for f in user_data.friends %}
-        <a href="/profile/{{f}}">{{f}}</a>
+        <a style="font-size: 18px" href="/profile/{{f}}"><span class="badge badge-info">{{f}}</span></a>
       {% endfor %}
+	  {% else %}
+	  	<i>Go make some friends!</i>
+		{% endif %}
         <div id="story-modal" class="story-modal">
           <div class="story-modal-content">
             <span class="close"> &times; </span>

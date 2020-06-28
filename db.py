@@ -16,7 +16,9 @@ users = db.users
 def user_template():
 	return {
 		"name": "",
-		"pwrd": ""
+		"pwrd": "",
+		"tags": [],
+		"stories": {}
 	}
 
 def get_user_by(field, value):

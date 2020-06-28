@@ -9,6 +9,7 @@
   margin-bottom: 5%;
 }
 
+
 .introtext{
   float: left;
   width: 40%;
@@ -496,6 +497,9 @@ html {
 #feed-page a{
   color: rgb(255, 122, 122);
 }
+#feed-page .badge-info{
+  background: rgb(255, 122, 122);
+}
 
 #discover-page a{
 	color: rgb(255, 187, 99);
@@ -504,13 +508,25 @@ html {
 	background: rgb(255, 187, 99);
 	color: #333;
 }
+#discover-page .badge-info {
+	background: rgb(255, 187, 99);
+	color: #333;
+}
 
 #friend-page a{
   color: rgb(3, 192, 60);
 }
-
+#friend-page .badge-info {
+	background: rgb(3, 192, 60);
+}
+#friend-page .btn-primary{
+  background: rgb(3, 192, 60);
+}
 #chat-page a{
   color: rgb(100, 100, 255);
+}
+#chat-page .btn-primary{
+  background: rgb(100, 100, 255);
 }
 
 #profile-page a {
@@ -520,4 +536,12 @@ html {
 #profile-page .btn-primary {
 	background: rgb(127, 113, 189);
 	color: white;
+}
+#profile-page .badge-info {
+	background: rgb(127, 113, 189);
+	color: white;
+}
+
+small {
+	font-size: 16px;
 }

@@ -33,19 +33,20 @@
     </div>
 </div>
 <div class="card expand-card" data-toggle="modal" data-target="#modal-{{title|replace(" ", "_")}}">
-    <div class="container">
-        
+    <div class="card-header">
 		{% if current_user == profile_user %}
         	<span data-val="{{title|replace(" ", "_")}}" class="close deletepost"> &times; </span>
 		{% endif %}
-        <h2 style="font-weight: 700;">{{title|replace("_", " ")}}</h2>
-		<small>By <a href="/profile/{{story.author}}">{{story.author}} </a>|</small>
-		<small>{{story.comments|length}} comment(s)</small>
+        <h2 style="font-weight: 700; padding-top:10px;margin-bottom:0px;">{{title|replace("_", " ")}}</h2>
+		<small style="margin:0">By <a href="/profile/{{story.author}}">{{story.author}} </a>|</small>
+		<small style="margin:0">{{story.comments|length}} comment(s)</small>
         <div>
             {% for tag in story.tags %}
                 <span class="badge badge-info">{{tag}}</span>
             {% endfor %}
         </div>
+    </div>
+	<div class="card-body">
         <p style="">{{story.content}}</p>
     </div>
 </div>

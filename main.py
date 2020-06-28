@@ -234,7 +234,7 @@ def change_tags():
 def new_story():
 	name = flask_login.current_user.id
 	data = request.json
-	title = data["title"].replace(" ", "_")
+	title = data["title"].replace(" ", "_").replace("'", "")
 	del data["title"]
 	data["comments"] = []
 	data["author"] = name
@@ -271,13 +271,13 @@ def joined(message):
 	name = flask_login.current_user.id
 	room = session.get('room')
 	join_room(room)
-	emit('status', {'msg': name + ' joined'}, room=room)
+	emit('status', {'id':name, 'msg': name + ' joined'}, room=room)
 
 @socketio.on('text', namespace='/chat')
 def text(message):
 	room = session.get('room')
 	name = flask_login.current_user.id
-	emit('message', {'msg': name + ':' + message['msg']}, room=room)
+	emit('message', {'sender': name, 'msg': message['msg']}, room=room)
 
 @socketio.on('left', namespace='/chat')
 def left(message):

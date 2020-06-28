@@ -15,6 +15,15 @@ $( document ).ready(function() {
 $(".comment").click(e => {
     title = $(e.currentTarget).data("val")
 	  author = $(e.currentTarget).data("author")
+
+    var charactersToRemove = [",", "'", ":", "-", ".", "{", "}", "(", ")", "/", "~", "`", "<", ">", "?", "!", "@", "#", "$", "%", "^", "&", "*"];
+  
+    for (charInd = 0; charInd < title.length; charInd++){
+      if (charactersToRemove.includes(title[charInd])){
+        title = title.replace(title[charInd], "");
+      }
+    }
+
     console.log(title);
     com = $("#comtext-"+title).val();
     

@@ -5,31 +5,35 @@
   <script src="static/js/friend.js"></script>
 
   <div class="main">
-    <h1 class="title">Friend Finder</h1>
+    <h1 class="title">Find Friends</h1>
+    <h3>See who shares similar experiences with you.</h3>
+    <br>
 
     <div id="hello"></div>
     <div id="friend-grid">
-		{% for f in friends %}
-      <div class="friend-card">
-		  <a href="/profile/{{f.name}}"><b> {{f.name}} </b></a>
-        
-        <br>
-
-		{% for tag in f.tags %}
+  
+    {% for f in friends %}
+      <div class="card">
+        <div class="card-header">
+          <a href="/profile/{{f.name}}" style="color:black;"><b> {{f.name}} </b></a>
+          <br>
+          
+          {% for tag in f.tags %}
           <span class="badge badge-info">{{tag}}</span>
-        {% endfor %}
-
-		<br>
-		<!-- Add or remove friends -->
-		{% if f.name in user_data.friends %}
-			<button data-target="{{f.name}}" class="remove-friend btn btn-primary"><i class="fa fa-user-times" aria-hidden="true"></i>  Remove friend</button>
-		{% else %}
-			<button data-target="{{f.name}}" class="add-friend btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>  Add friend</button>
-		{% endif %}
-
-        <p> {{f.bio}} </p>
-			</div>
-      	{% endfor %}
+          {% endfor %}
+        </div>
+        
+        <div class="card-body">
+          <p> {{f.bio}} </p>
+          {% if f.name in user_data.friends %}
+            <button data-target="{{f.name}}" class="remove-friend btn btn-primary"><i class="fa fa-user-times" aria-hidden="true"></i>  Remove friend</button>
+          {% else %}
+            <button data-target="{{f.name}}" class="add-friend btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>  Add friend</button>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+        
     </div>
 
   </div>
