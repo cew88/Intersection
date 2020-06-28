@@ -4,132 +4,176 @@
 
 	<!-- Display the following content if this is the user's own profile -->
   <!--<h2 class="section-title profile">Profile</h2>-->
-  <div class="main">
-    
-    <h1 class="title">{{profile_user}}</h1>
-    <div id="tags">
-		{% for tag in user_data.tags %}
-			<span class="badge badge-info">{{tag}}</span>
-		{% endfor %}
-	</div>
-	{% if current_user != profile_user %}
-	<!-- Add or remove friends -->
-		{% if profile_user in current_user_data.friends %}
-			<button data-target="{{profile_user}}" class="remove-friend btn btn-primary"><i class="fa fa-user-times" aria-hidden="true"></i>Remove friend</button>
-		{% else %}
-			<button data-target="{{profile_user}}" class="add-friend btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>Add friend</button>
-		{% endif %}
-	{% endif %}
-    <hr>
-    <b> About Me </b>
-    <p id="bio" {% if current_user == profile_user %} data-placeholder="Click here to edit your bio. Tell others about yourself!" contenteditable="true" {% endif %}>{% if user_data.bio %} {{user_data.bio}} {% endif %}</p>
-    <b> Friends </b>
-	{% for f in user_data.friends %}
-		<a href="/profile/{{f}}">{{f}}</a>
-	{% endfor %}
-    <div id="story-modal" class="story-modal">
-      <div class="story-modal-content">
-		  
-        <span class="close"> &times; </span>
-        
-         <form>
-          <label for="story-title"> <p>Title your story </p></label><br>
-          <input class="form-control" type="text" id="story-title" maxlength="100"></input>
-          <label for="story"> <p>Compose your story </p></label><br>
-          <textarea class="form-control" id="story" rows="3"></textarea>
-          <p>Drag and drop tags to help us categorize your story.</p>
-
-          <div id="story-box1" ondrop="drop(event)" ondragover="allowDrop(event)">
-          </div>
-
-          <div id="story-box2" ondrop="drop(event)" ondragover="allowDrop(event)">
-            
-            <p ondragstart="dragStart(event)" draggable="true" id="sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="LGBTQ+" class="tags"> LGBTQ+ </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="asian-american" class="tags"> asian-american </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="down-syndrome" class="tags"> down-syndrome </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="vitiligo" class="tags"> vitiligo </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="cancer" class="tags"> cancer </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="cystic-fibrosis" class="tags"> cystic-fibrosis </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="biracial" class="tags"> biracial </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="multiple-sclerosis" class="tags"> multiple-sclerosis </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="pcos" class="tags"> pcos </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="tourette-syndrome" class="tags"> tourette-syndrome </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="anxiety" class="tags"> anxiety </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="depression" class="tags"> depression </p>
-            <p ondragstart="dragStart(event)" draggable="true" id="transgender" class="tags"> transgender </p>
-
-          </div>
-    
-         </form>
-         <br><br>
-         <label for="other-story-tag"> <p> Add another tag </p></label><br>
-         <input class="form-control" type="text" id="other-story-tag" maxlength="100"></input>
-         <button class="btn btn-primary" id="add-new-story-tag"> Add a tag </button>
-         <button class="btn btn-primary" id="submit-story"> Submit </button>
-         <br>
-      </div>
-    </div>
-
-
-    <div id="tag-modal" class="tag-modal">
-      <div class="tag-modal-content">
-        <span class="close"> &times; </span>
-        <p>Drag and drop tags</p>
-
-        <div id="tag-box1" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-
-        <div id="tag-box2" ondrop="drop(event)" ondragover="allowDrop(event)">
-          
-          <p ondragstart="dragStart(event)" draggable="true" id="t- sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- LGBTQ+" class="tags"> LGBTQ+ </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- asian-american" class="tags"> asian-american </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- down-syndrome" class="tags"> down-syndrome </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- vitiligo" class="tags"> vitiligo </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- cancer" class="tags"> cancer </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- cystic-fibrosis" class="tags"> cystic-fibrosis </p>
-          
-          <p ondragstart="dragStart(event)" draggable="true" id="t- biracial" class="tags"> biracial </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- multiple-sclerosis" class="tags"> multiple-sclerosis </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- pcos" class="tags"> pcos </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- tourette-syndrome" class="tags"> tourette-syndrome </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- anxiety" class="tags"> anxiety </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- depression" class="tags"> depression </p>
-          <p ondragstart="dragStart(event)" draggable="true" id="t- transgender" class="tags"> transgender </p>
-        </div>
-
-        <label for="other-page-tag"> <p> Add another tag </p></label><br>
-        <input class="form-control" type="text" id="other-page-tag" maxlength="100"></input>
-        <button class="btn btn-primary" id="add-new-page-tag"> Add a tag </button>
-        <button class="btn btn-primary" id="submit-tags"> Submit </button>
-      </div>      
-    </div>
-
-    {% if current_user == profile_user %}
-    <div>
-      <button class="btn btn-primary hide" id="change-bio">Change bio</button>
-
-      <button class="btn btn-primary" id="open-compose-story">Add your story</button>
+  <div class="profile-page">
+    <div class="main">
       
-      <button class="btn btn-primary" id="update-tags"> Update tags </button>
-    </div>
-    {% endif %}
-    <br>
-    <b> Posts </b>
-    <div id="posts" class="post-grid">
-        <!-- If the user has posts saved they will appear here -->
-        
-        {% if user_data.stories %}
-            {% for title, story in user_data.stories.items() %}
-                {% include 'postcard.html'%}
-            {% endfor %}
-        {% endif %}
-    </div>
-   
+      <h1 class="title">{{profile_user}}</h1>
+      <div id="tags">
+        {% for tag in user_data.tags %}
+          <span class="badge badge-info">{{tag}}</span>
+        {% endfor %}
+      </div>
 
+      {% if current_user != profile_user %}
+      <!-- Add or remove friends -->
+        {% if profile_user in current_user_data.friends %}
+          <button data-target="{{profile_user}}" class="remove-friend btn btn-primary"><i class="fa fa-user-times" aria-hidden="true"></i>  Remove friend</button>
+        {% else %}
+          <button data-target="{{profile_user}}" class="add-friend btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>  Add friend </button>
+        {% endif %}
+      {% endif %}
+      <br>
+
+      <b> About Me </b>
+      <p id="bio" {% if current_user == profile_user %} data-placeholder="Click here to edit your bio. Tell others about yourself!" contenteditable="true" {% endif %}>{% if user_data.bio %} {{user_data.bio}} {% endif %}</p>
+
+      {% if current_user == profile_user %}
+      <div>
+        <button class="btn btn-primary hide" id="change-bio">Change bio</button>
+        <button class="btn btn-primary" id="open-compose-story">Add your story</button>
+        <button class="btn btn-primary" id="update-tags"> Update tags </button>
+      </div>
+      {% endif %}
+
+      <br>
+      <b> Friends </b>
+      {% for f in user_data.friends %}
+        <a href="/profile/{{f}}">{{f}}</a>
+      {% endfor %}
+        <div id="story-modal" class="story-modal">
+          <div class="story-modal-content">
+            <span class="close"> &times; </span>
+            
+            <form>
+              <label for="story-title"> <p>Title your story </p></label><br>
+              <input class="form-control" type="text" id="story-title" maxlength="100"></input>
+              <label for="story"> <p>Compose your story </p></label><br>
+              <textarea class="form-control" id="story" rows="3"></textarea>
+              <p>Drag and drop tags to help us categorize your story.</p>
+
+              <div id="story-box1" ondrop="drop(event)" ondragover="allowDrop(event)">
+              </div>
+
+              <div id="story-box2" ondrop="drop(event)" ondragover="allowDrop(event)">
+              
+                <p ondragstart="dragStart(event)" draggable="true" id="sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="LGBTQ+" class="tags"> LGBTQ+ </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="asian-american" class="tags"> asian-american </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="down-syndrome" class="tags"> down-syndrome </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="vitiligo" class="tags"> vitiligo </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="cancer" class="tags"> cancer </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="cystic-fibrosis" class="tags"> cystic-fibrosis </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="biracial" class="tags"> biracial </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="multiple-sclerosis" class="tags"> multiple-sclerosis </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="pcos" class="tags"> pcos </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="tourette-syndrome" class="tags"> tourette-syndrome </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="anxiety" class="tags"> anxiety </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="depression" class="tags"> depression </p>
+                <p ondragstart="dragStart(event)" draggable="true" id="transgender" class="tags"> transgender </p>
+              </div>
+            </form>
+            
+          <br><br>
+          <label for="other-story-tag"> <p> Add another tag </p></label><br>
+          <input class="form-control" type="text" id="other-story-tag" maxlength="100"></input>
+          <button class="btn btn-primary" id="add-new-story-tag"> Add a tag </button>
+          <button class="btn btn-primary" id="submit-story"> Submit </button>
+          <br>
+        </div>
+      </div> <!-- End story modal -->
+
+
+      <div id="tag-modal" class="tag-modal">
+        <div class="tag-modal-content">
+          <span class="close"> &times; </span>
+          <p>Drag and drop tags</p>
+
+          <div id="tag-box1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          </div>
+
+          <div id="tag-box2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p ondragstart="dragStart(event)" draggable="true" id="t- sexual-assault-survivor" class="tags">sexual-assualt-survivor </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- domestic-abuse-survivor" class="tags"> domestic-abuse-survivor </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- LGBTQ+" class="tags"> LGBTQ+ </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- asian-american" class="tags"> asian-american </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- down-syndrome" class="tags"> down-syndrome </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- vitiligo" class="tags"> vitiligo </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- cancer" class="tags"> cancer </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- cystic-fibrosis" class="tags"> cystic-fibrosis </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- biracial" class="tags"> biracial </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- multiple-sclerosis" class="tags"> multiple-sclerosis </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- pcos" class="tags"> pcos </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- tourette-syndrome" class="tags"> tourette-syndrome </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- anxiety" class="tags"> anxiety </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- depression" class="tags"> depression </p>
+            <p ondragstart="dragStart(event)" draggable="true" id="t- transgender" class="tags"> transgender </p>
+          </div>
+
+          <label for="other-page-tag"> <p> Add another tag </p></label><br>
+          <input class="form-control" type="text" id="other-page-tag" maxlength="100"></input>
+          <button class="btn btn-primary" id="add-new-page-tag"> Add a tag </button>
+          <button class="btn btn-primary" id="submit-tags"> Submit </button>
+        </div>      
+      </div> <!-- End update tag modal-->
+
+
+      <br>
+      <b> Posts </b>
+      <div id="posts" class="post-grid">
+          <!-- If the user has posts saved they will appear here -->
+          
+          {% if user_data.stories %}
+              {% for title, story in user_data.stories.items() %}
+                  {% include 'postcard.html'%}
+              {% endfor %}
+          {% endif %}
+      </div> <!-- End posts div -->
+    </div>
+
+  <div class="resources">
+    <p style="font-size: 15px";><b> Help is available. Please use the following resources: </b></p>
+    <p style="font-size:12px";>
+    <br><b> Abuse </b><br>
+    United States Elder Abuse Hotline <br>1-866-363-4276<br>
+    Child Abuse National Hotline <br>1-800-25ABUSE<br>
+    National Sexual Assault Hotline <br>1-800-656-HOPE (4673)<br>
+    National Domestic Violence Hotline<br> 1-800-799-SAFE<br>
+
+    <br><b>Addiction </b><br>
+    Drug Abuse National Helpline <br> 1-800-662-4357<br>
+
+    <br><b>Cancer </b><br>
+    American Cancer Society 1-800-227-2345<br>
+
+    <br><b>Crisis #s </b><br>
+    Youth Crisis Hotline 1-800-448-4663<br>
+    United Way Crisis Helpline 1-800-233-HELP<br>
+
+    <br><b>Eating Disorders </b><br>
+    Eating Disorders Center 1-888-236-1188<br>
+  
+    <br><b>Grief </b><br>
+    GriefShare 1-800-395-5755<br>
+  
+    <br><b>Homeless </b><br>
+    Homeless 1-800-231-6946<br>
+    
+    <br><b>LGBTQIA+ </b><br>
+    Gay and Lesbian National Hotline<br> 1-888-843-4564<br>
+    Trevor Hotline (Suicide) 1-866-4-U-TREVOR<br>
+
+    <br><b>Self-Injury </b><br>
+    S.A.F.E. 1-800-DONT-CUT<br>
+    
+    <br><b>Suicide </b><br>
+    Suicide Prevention Hotline 1-800-827-7571<br>
+    
+    <br><a href="http://www.pleaselive.org/hotlines/"> source: http://www.pleaselive.org/hotlines/ </a>
+    </p>
+
+  </div>
+  
   </div>
 
  
