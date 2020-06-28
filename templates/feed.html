@@ -22,8 +22,7 @@
 		<div id="posts" class="post-grid">
 		{% if featured %}
 			{% for title, story in featured %}
-				<!-- if story tags match user tags -->
-        
+              
         {% include 'postcard.html'%}
 			{% endfor %}
 		{% endif %}

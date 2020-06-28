@@ -1,4 +1,4 @@
-![banner](static/images/logotext.png)
+![banner](static/images/readmeimg.png)
 
 # Intersection
 
@@ -9,3 +9,10 @@ Talking about your experiences with people who understand and relate to them can
 Intersection is a social network with the sole purpose of connecting people to identity-based forums in which they can speak freely, share their story, engage in discussions, come across different points of view, and meet new people with intersecting identities.
  
 When you join Intersection, you'll have the opportunity to add tags that correspond to your identities and experiences. Once adding your tags, you'll be able to connect with others with similar experiences through chats and customized feeds. Intersection will also give you friend suggestions based on how many identities and experiences you have in common. Once adding friends, you'll be able to chat one-on-one with your new connections. You'll also have access to forums where people of all experiences can share their stories.
+
+## Built With
+• HTML/CSS  
+• JavaScript  
+• Flask  
+• Socket.io  
+• MongoDB  

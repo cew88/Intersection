@@ -57,6 +57,16 @@ def change_tags(name, tags):
 	if user:
 		users.update_one({'name': name}, {"$set": {"tags": tags}})
 
+def friend(name, target):
+	user = get_user_by("name", name)
+	if user:
+		users.update_one({'name': name}, {"$push": {"friends": target}})
+
+def unfriend(name, target):
+	user = get_user_by("name", name)
+	if user:
+		users.update_one({'name': name}, {"$pull": {"friends": target}})
+
 def new_story(name, title, story):
 	user = get_user_by("name", name)
 	if user:

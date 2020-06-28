@@ -2,7 +2,14 @@
   display: grid;
   width: 100%;
   grid-template-columns: auto auto auto auto auto;
-  grid-gap: 10px;
-  padding: 10px;
+  grid-gap: 5px;
   text-align: center;
+}
+
+.friend-card {
+  background-color: rgba(250, 235, 215, 0.4);
+  border-radius: 10px;
+  height: 275px;
+  width: 275px;
+  overflow: auto;
 }

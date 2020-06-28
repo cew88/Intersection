@@ -4,32 +4,21 @@
   <link rel="stylesheet" href="/static/css/friend.css">
   <script src="static/js/friend.js"></script>
 
-
   <div class="main">
     <h1 class="title">Friend Finder</h1>
 
     <div id="hello"></div>
     <div id="friend-grid">
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
-      
-      
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
-      
-      <div> <p> bio </p> </div>
+		{% for f in friends %}
+      <div class="friend-card">
+        <b> {{f.name}} </b>
+        <br>
+        {% for tag in f.tags %}
+          <span class="badge badge-info">{{tag}}</span>
+        {% endfor %}
+        <p> {{f.bio}} </p>
+			</div>
+      	{% endfor %}
     </div>
 
   </div>

@@ -1,14 +1,13 @@
-var user_tags = ["abc", "def", "ghi", "jkl"];
+/*
+window.addEventListener('load', function(){
+  var friendCards = document.getElementsByClassName("friend-card");
+  var usernames = document.getElementsByTagName("b");
 
-var friendGrid = document.getElementById("hello");
 
 
-for (tag_index = 0; tag_index < user_tags.length; tag_index++){
-  var tag = document.createElement('span');
-  tag.setAttribute("class", "badge badge-info");
-  tag.textContent = (user_tags[tag_index]);
-  console.log(tag_index);
-  friendGrid.appendChild(tag);
-}
+  for (i = 0; i < friendCards.length; i++){
+    var username = usernames[i].textContent;
+  }
 
-var bioCard = document.createElement("div");
+});
+*/

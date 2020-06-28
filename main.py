@@ -133,8 +133,8 @@ def discover():
 def friend():
 	current_user = flask_login.current_user.id
 	user_data = db.get_user_by("name", current_user)
-	print(list(db.users.find({})))
-	return render_template('friend.html', page_name="friend", user_data=user_data)
+	friends = [x for x in list(db.users.find({})) if "tags" in x and len(set(x["tags"]).intersection(set(user_data["tags"])))]
+	return render_template('friend.html', page_name="friend", friends=friends, user_data=user_data)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
