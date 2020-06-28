@@ -11,11 +11,22 @@
     <div id="friend-grid">
 		{% for f in friends %}
       <div class="friend-card">
-        <b> {{f.name}} </b>
+		  <a href="/profile/{{f.name}}"><b> {{f.name}} </b></a>
+        
         <br>
-        {% for tag in f.tags %}
+
+		{% for tag in f.tags %}
           <span class="badge badge-info">{{tag}}</span>
         {% endfor %}
+
+		<br>
+		<!-- Add or remove friends -->
+		{% if f.name in user_data.friends %}
+			<button data-target="{{f.name}}" class="remove-friend btn btn-primary"><i class="fa fa-user-times" aria-hidden="true"></i>Remove friend</button>
+		{% else %}
+			<button data-target="{{f.name}}" class="add-friend btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>Add friend</button>
+		{% endif %}
+
         <p> {{f.bio}} </p>
 			</div>
       	{% endfor %}

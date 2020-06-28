@@ -12,10 +12,21 @@
 			<span class="badge badge-info">{{tag}}</span>
 		{% endfor %}
 	</div>
+	{% if current_user != profile_user %}
+	<!-- Add or remove friends -->
+		{% if profile_user in current_user_data.friends %}
+			<button data-target="{{profile_user}}" class="remove-friend btn btn-primary"><i class="fa fa-user-times" aria-hidden="true"></i>Remove friend</button>
+		{% else %}
+			<button data-target="{{profile_user}}" class="add-friend btn btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i>Add friend</button>
+		{% endif %}
+	{% endif %}
     <hr>
     <b> About Me </b>
     <p id="bio" {% if current_user == profile_user %} data-placeholder="Click here to edit your bio. Tell others about yourself!" contenteditable="true" {% endif %}>{% if user_data.bio %} {{user_data.bio}} {% endif %}</p>
-    
+    <b> Friends </b>
+	{% for f in user_data.friends %}
+		<a href="/profile/{{f}}">{{f}}</a>
+	{% endfor %}
     <div id="story-modal" class="story-modal">
       <div class="story-modal-content">
 		  

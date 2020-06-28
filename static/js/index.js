@@ -38,3 +38,41 @@ $(".comment").click(e => {
     });
   }
 });
+
+// Add/remove friends
+$(".add-friend").click(e => {
+    target = $(e.currentTarget).data("target");
+	$.ajax({
+		url: '/addfriend',
+		type: "POST",
+		data: JSON.stringify({ target: target }),
+		contentType: "application/json; charset=UTF-8",
+		success: function(response) {
+			$(e.currentTarget).removeClass("add-friend");
+			$(e.currentTarget).addClass("remove-friend");
+			$(e.currentTarget).html(`<i class="fa fa-user-times" aria-hidden="true"></i>Remove friend`);
+		},
+		error: function(error) {
+			console.log(error);
+		}
+	});
+});
+
+$(".remove-friend").click(e => {
+    target = $(e.currentTarget).data("target");
+	$.ajax({
+		url: '/removefriend',
+		type: "POST",
+		data: JSON.stringify({ target: target }),
+		contentType: "application/json; charset=UTF-8",
+		success: function(response) {
+			$(e.currentTarget).removeClass("remove-friend");
+			$(e.currentTarget).addClass("add-friend");
+			$(e.currentTarget).html(`<i class="fa fa-user-plus" aria-hidden="true"></i>Add friend`);
+		},
+		error: function(error) {
+			console.log(error);
+		}
+	});
+});
+

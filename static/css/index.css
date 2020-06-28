@@ -326,7 +326,7 @@ ul {
 .team-grid {
   margin-left: 2%;
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   padding: 10px;
   grid-gap: 10px;
 }
@@ -342,7 +342,7 @@ html {
 
 .column {
   float: left;
-  width: 20%;
+  width: 25%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
@@ -493,6 +493,10 @@ html {
   }
 }
 
+#feed-page a{
+  color: rgb(255, 122, 122);
+}
+
 #discover-page a{
 	color: rgb(255, 187, 99);
 }
@@ -501,11 +505,19 @@ html {
 	color: #333;
 }
 
+#friend-page a{
+  color: rgb(126, 252, 126);
+}
+
+#chat-page a{
+  color: rgb(100, 100, 255);
+}
+
 #profile-page a {
-	color: rgb(116, 124, 177);
+	color: rgb(127, 113, 189);
 }
 
 #profile-page .btn-primary {
-	background: rgb(116, 124, 177);
+	background: rgb(127, 113, 189);
 	color: white;
 }

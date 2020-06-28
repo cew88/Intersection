@@ -94,12 +94,14 @@ def profile(username):
 	current_user = flask_login.current_user.id
 	# Make sure the user actually exists
 	profile_user_data = db.get_user_by("name", username)
+	current_user_data = db.get_user_by("name", current_user)
 	if (profile_user_data):
 		return render_template('profile.html',
 			page_name="profile",
 			current_user=current_user,
 			profile_user=username,
-			user_data = profile_user_data)
+			user_data = profile_user_data,
+			current_user_data = current_user_data)
 	else:
 		return render_template('404.html', message="User {} doesn't exist!".format(username))
 
@@ -133,7 +135,7 @@ def discover():
 def friend():
 	current_user = flask_login.current_user.id
 	user_data = db.get_user_by("name", current_user)
-	friends = [x for x in list(db.users.find({})) if "tags" in x and len(set(x["tags"]).intersection(set(user_data["tags"])))]
+	friends = [x for x in list(db.users.find({})) if "tags" in x and len(set(x["tags"]).intersection(set(user_data["tags"]))) and x["name"] != current_user]
 	return render_template('friend.html', page_name="friend", friends=friends, user_data=user_data)
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -198,6 +200,24 @@ def change_bio():
 	data = request.json
 	print(data)
 	db.change_bio(name, data["bio"])
+	return jsonify({})
+
+@app.route('/addfriend', methods=["POST"])
+@flask_login.login_required
+def add_friend():
+	name = flask_login.current_user.id
+	data = request.json
+	db.friend(name, data["target"])
+	print("ADDING", db.get_user_by("name", name)["friends"])
+	return jsonify({})
+
+@app.route('/removefriend', methods=["POST"])
+@flask_login.login_required
+def remove_friend():
+	name = flask_login.current_user.id
+	data = request.json
+	db.unfriend(name, data["target"])
+	print("REMOVING", db.get_user_by("name", name)["friends"])
 	return jsonify({})
 
 @app.route('/changetags', methods=["POST"])

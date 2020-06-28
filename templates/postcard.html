@@ -39,7 +39,8 @@
         	<span data-val="{{title|replace(" ", "_")}}" class="close deletepost"> &times; </span>
 		{% endif %}
         <h2 style="font-weight: 700;">{{title|replace("_", " ")}}</h2>
-		
+		<small>By <a href="/profile/{{story.author}}">{{story.author}} </a>|</small>
+		<small>{{story.comments|length}} comment(s)</small>
         <div>
             {% for tag in story.tags %}
                 <span class="badge badge-info">{{tag}}</span>

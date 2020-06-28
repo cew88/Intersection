@@ -60,7 +60,7 @@ def change_tags(name, tags):
 def friend(name, target):
 	user = get_user_by("name", name)
 	if user:
-		users.update_one({'name': name}, {"$push": {"friends": target}})
+		users.update_one({'name': name}, {"$addToSet": {"friends": target}})
 
 def unfriend(name, target):
 	user = get_user_by("name", name)
