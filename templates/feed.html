@@ -6,10 +6,16 @@
 
   <!--<h2 class="section-title discover">Discover</h2>-->
 	<div class="main">
-		<h1 class="title">Discover</h1>
+		<h1 class="title">Newsfeed</h1>
 
+	<!--
     <button class="btn btn-primary" id="filter"> Filter </button>
     <button class="btn btn-primary" id="sort" onclick="dropDownFunction()"> Sort </button>
+	-->
+	<b style="font-size: 18px;">Showing posts with </b>
+	{% for tag in user_data.tags %}
+		<span class="badge badge-info">{{tag}}</span>
+	{% endfor %}
     
     <br><br>
     

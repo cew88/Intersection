@@ -7,7 +7,11 @@
   <div class="main">
     
     <h1 class="title">{{profile_user}}</h1>
-    <div id="tags"></div>
+    <div id="tags">
+		{% for tag in user_data.tags %}
+			<span class="badge badge-info">{{tag}}</span>
+		{% endfor %}
+	</div>
     <hr>
     <b> About Me </b>
     <p id="bio" {% if current_user == profile_user %} data-placeholder="Click here to edit your bio. Tell others about yourself!" contenteditable="true" {% endif %}>{% if user_data.bio %} {{user_data.bio}} {% endif %}</p>
@@ -22,7 +26,6 @@
           <input class="form-control" type="text" id="story-title" maxlength="100"></input>
           <label for="story"> <p>Compose your story </p></label><br>
           <textarea class="form-control" id="story" rows="3"></textarea>
-          <br>
           <p>Drag and drop tags to help us categorize your story.</p>
 
           <div id="story-box1" ondrop="drop(event)" ondragover="allowDrop(event)">

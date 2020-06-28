@@ -36,27 +36,7 @@ document.getElementById("submit-story").onclick = function(){
     tags.appendChild(tag_to_add);
     tags.appendChild(document.createTextNode(' '));
   }
-  /*
-  post_content.appendChild(tags);
 
-  var title = document.createElement('p');
-  var title_text = document.createTextNode(document.getElementById("story-title").value);
-  title.style.textAlign = "center";
-  title.appendChild(title_text);
-  title.style.fontWeight = "700";
-  
-  var content = document.createElement('p');
-  var content_text = document.createTextNode(document.getElementById("story").value);
-  content.appendChild(content_text);
-  content.style.textAlign = "center";
-
-  post_content.appendChild(title);
-  post_content.appendChild(content);
-
-  post_card.appendChild(post_content);
-
-  document.getElementById("posts").appendChild(post_card);
-  */
   // Backend stuff
   $.ajax({
         url: '/newstory',
@@ -76,6 +56,7 @@ document.getElementById("submit-story").onclick = function(){
   document.getElementById("story").value = '';
   document.getElementById("story-box1").innerHTML = box1;
   document.getElementById("story-box2").innerHTML = box2;
+  document.getElementById("other-story-tag").value = '';
 }
 
 //Save the original state of tag boxes when the page was loaded
@@ -118,7 +99,18 @@ window.onclick = function(event){
 
 document.getElementById("submit-tags").onclick = function(){
   tagModal.style.display="none";
-  profile_tags(personal_tags);
+  $.ajax({
+        url: '/changetags',
+        type: "POST",
+        data: JSON.stringify({ tags: personal_tags}),
+        contentType: "application/json; charset=UTF-8",
+        success: function(response) {
+            profile_tags(personal_tags);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
 }
 
 //Deal with drag and drop
@@ -158,7 +150,6 @@ function drop(event) {
 }
 
 //For editing bio
-
 $("[contenteditable]").blur(function(){
     var $element = $(this);
     if ($element.html().length && !$element.text().trim().length) {
@@ -222,7 +213,6 @@ document.getElementById("add-new-story-tag").onclick = function(){
   document.getElementById("story-box2").appendChild(new_tag);
   document.getElementById("story-box2").appendChild(document.createTextNode(" "));
 }
-
 
 document.getElementById("add-new-page-tag").onclick = function(){
   console.log(document.getElementById("other-page-tag").value);

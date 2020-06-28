@@ -103,6 +103,20 @@ def profile(username):
 	else:
 		return render_template('404.html', message="User {} doesn't exist!".format(username))
 
+@app.route('/feed')
+@flask_login.login_required
+def feed():
+	posts = {}
+	current_user = flask_login.current_user.id
+	user_data = db.get_user_by("name", current_user)
+
+	[posts.update(x["stories"]) for x in list(db.users.find({}, {'stories':1, '_id':0})) if "stories" in x]
+	print(set(list(posts.items())[0][1]["tags"]), set(user_data["tags"]))
+	posts = {name: data for name, data in posts.items() if len(set(data["tags"]).intersection(set(user_data["tags"])))}
+	print(posts)
+	featured = list(sorted(posts.items(), key=lambda k: len(k[1]["comments"])))[::-1]
+	return render_template('feed.html', page_name="feed", featured=featured, user_data=user_data)
+
 @app.route('/discover')
 @flask_login.login_required
 def discover():
@@ -113,6 +127,14 @@ def discover():
 	[posts.update(x["stories"]) for x in list(db.users.find({}, {'stories':1, '_id':0})) if "stories" in x]
 	featured = list(sorted(posts.items(), key=lambda k: len(k[1]["comments"])))[::-1]
 	return render_template('discover.html', page_name="discover", featured=featured, user_data=user_data)
+
+@app.route('/friend')
+@flask_login.login_required
+def friend():
+	current_user = flask_login.current_user.id
+	user_data = db.get_user_by("name", current_user)
+	print(list(db.users.find({})))
+	return render_template('friend.html', page_name="friend", user_data=user_data)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -177,6 +199,15 @@ def change_bio():
 	print(data)
 	db.change_bio(name, data["bio"])
 	return jsonify({})
+
+@app.route('/changetags', methods=["POST"])
+@flask_login.login_required
+def change_tags():
+	name = flask_login.current_user.id
+	data = request.json
+	tags = [x[3:] for x in data["tags"]]
+	db.change_tags(name, tags)
+	return jsonify({"tags":tags})
 
 @app.route('/newstory', methods=["POST"])
 @flask_login.login_required

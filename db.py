@@ -52,6 +52,11 @@ def change_bio(name, bio):
 	if user:
 		users.update_one({'name': name}, {"$set": {"bio": bio}})
 
+def change_tags(name, tags):
+	user = get_user_by("name", name)
+	if user:
+		users.update_one({'name': name}, {"$set": {"tags": tags}})
+
 def new_story(name, title, story):
 	user = get_user_by("name", name)
 	if user:

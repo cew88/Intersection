@@ -20,7 +20,8 @@ var list_of_responses = ["I'm so sorry.",
   "I'm proud of you.",
   "You're so brave."];
 
-window.addEventListener('load', function(){ 
+window.addEventListener('load', function(){
+  var suggestedPrompt = document.getElementsByClassName("suggested-prompt");
   var suggestedComments = document.getElementsByClassName("suggested-comments-div");
 
   for (post_index = 0; post_index < suggestedComments.length; post_index++){
@@ -35,12 +36,13 @@ window.addEventListener('load', function(){
       }
     }
 
+    suggestedPrompt[post_index].appendChild(document.createTextNode("Can't think of what to say? Try:"));
+
     for (com_index = 0; com_index < random_responses.length; com_index++){
       comment_text = document.createTextNode(random_responses[com_index]);
       comment_div = document.createElement('div');
       comment_div.setAttribute('class', 'suggested-comment');
       comment_div.appendChild(comment_text);
-      
       suggestedComments[post_index].appendChild(comment_div);
     } 
   }
