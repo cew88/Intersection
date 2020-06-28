@@ -53,7 +53,7 @@ function leave_room() {
             if (text.trim() === '') {
                 return;
             }
-            $('.message_input').val('');
+            if (sender == me) $('.message_input').val('');
             $messages = $('.messages');
             message = new Message({
                 text: text,
