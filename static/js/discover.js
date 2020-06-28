@@ -1,7 +1,3 @@
-//Add filtration
-
-
-
 //Generate suggested responses
 var list_of_responses = ["I'm so sorry.", 
   "I'm here for you.",

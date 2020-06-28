@@ -1,4 +1,4 @@
-add.profile-page {
+.profile-page {
   display: grid;
   width: 100%;
   grid-gap: 10px;
@@ -132,7 +132,7 @@ p {
   display: grid;
   width: 100%;
   grid-gap: 50px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   justify-content: space-evenly;
 }
 
